@@ -7,6 +7,12 @@ import { ApolloClient,
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context'
 
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Header from './components/Header/';
+import Footer from './components/Footer';
+
 const httpLink = createHttpLink({
   uri: '/graphql'
 });
@@ -22,13 +28,6 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
-
-
-import Home from './pages/Home';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import Header from './components/Header/';
-import Footer from './components/Footer';
 
 
 const client = new ApolloClient({
