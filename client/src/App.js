@@ -7,6 +7,12 @@ import { ApolloClient,
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context'
 
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Header from './components/Header/';
+import Footer from './components/Footer';
+
 const httpLink = createHttpLink({
   uri: '/graphql'
 });
@@ -23,6 +29,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -32,22 +39,24 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <div className="App">
+          <header>
+            <Header />
+          </header>
+          <div>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/login' element={<Login/>}/>
+              <Route path='/signup' element={<Signup/>}/>
+              {/* <Route path='' element={</>}/> */}
+            </Routes>
+          </div>
+          <footer>
+            <Footer/>
+          </footer>
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }
