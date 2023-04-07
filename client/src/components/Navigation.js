@@ -2,7 +2,7 @@ import React from 'react';
 
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
-function Homepage({ currentPage, handlePageChange }) {
+function Navigation({ currentPage, handlePageChange }) {
   return (
     <section>
       <h1 className='sitetitle'>Smokey Nagata<small className='subtitle'>Bid on cars in your area</small></h1>
@@ -41,4 +41,4 @@ function Homepage({ currentPage, handlePageChange }) {
   );
 }
 
-export default Homepage;
+export default Navigation;

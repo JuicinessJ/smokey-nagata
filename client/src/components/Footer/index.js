@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div>index</div>
+    <div>Smokey Nagata is an app made by ...</div>
   )
 }
 
