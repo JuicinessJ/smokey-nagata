@@ -20,9 +20,37 @@ const SignupForm = () => {
     };
 
     const handleFormSubmit = async (event) => {
+        event.preventDefault();
 
-    }
-    
+        // check the form to see if it has everything
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        try{
+
+            // grab the signup data from the mutation
+            const { data } = await addUser({
+                variables: { ...signupFormData },
+            });
+
+            // send the data as a token
+            Auth.login(data.addUser.token);
+
+        } catch (err ){
+            console.error(err);
+        }
+
+        // clear out the signupform data
+        setSignupFormData({
+            username: '',
+            email: '',
+            password: '',
+        });
+    };
+
     return (
         <>
         </>
