@@ -25,7 +25,7 @@ const userSchema = new Schema(
     cars: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Post'
+            ref: 'post'
         }
     ]
 },
