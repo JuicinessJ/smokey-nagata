@@ -28,10 +28,23 @@
   color: #61dafb;
 }
 
+.subtitle {
+  margin-left: 1%;
+}
+
 .button {
   background-color: rgb(70, 79, 255);
   color: white;
   border-radius: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footercredit {
+  margin-top: 3%;
 }
 
 @keyframes App-logo-spin {

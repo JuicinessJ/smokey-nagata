@@ -18,7 +18,7 @@ const Home = () => {
     <main>
       <div>
         <div>
-          
+          <p>Hello</p>
         </div>
       </div>
     </main>
