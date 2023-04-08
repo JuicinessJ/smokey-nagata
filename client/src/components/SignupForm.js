@@ -53,6 +53,21 @@ const SignupForm = () => {
 
     return (
         <>
+            <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+
+                <Form.Group className='mb-3'>
+                    <Form.Label htmlFor='username'>Username</Form.Label>
+                    <Form.Control
+                        type='text'
+                        placeholder='Your username'
+                        name='username'
+                        onChange={handleSignupInput}
+                        value={signupFormData.username}
+                        required
+                    />
+                    <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+                </Form.Group>
+            </Form>
         </>
     );
 };
