@@ -25,4 +25,22 @@ const typeDefs = gql`
         token: ID!
         user: User!
     }
+
+    type Query {
+        me: User
+        posts(username: String): [Post]
+    }
+
+    type Mutation {
+        addUser(
+            username: String!,
+            email: String!,
+            password: String!,
+            location: String!,): Auth
+        login(
+            email: String!,
+            password: String!): Auth
+    }
 `;
+
+module.exports = typeDefs;
