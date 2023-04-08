@@ -27,7 +27,7 @@ const postSchema = new Schema(
         condition: {
             type: String,
         },
-        millage: {
+        mileage: {
             type: Number,
         },
         createdAt: {
