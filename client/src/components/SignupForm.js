@@ -67,6 +67,40 @@ const SignupForm = () => {
                     />
                     <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
                 </Form.Group>
+
+                <Form.Group className='mb-3'>
+                    <Form.Label htmlFor='email'>Email</Form.Label>
+                    <Form.Control
+                        type='email'
+                        placeholder='Your email address'
+                        name='email'
+                        onChange={handleSignupInput}
+                        value={signupFormData.email}
+                        required
+                    />
+                    <Form.Control.Feedback type='invalid'>Email is required</Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group className='mb-3'>
+                    <Form.Label htmlFor='password'>Password</Form.Label>
+                    <Form.Control 
+                        type='password'
+                        placeholder='Your password'
+                        name='password'
+                        onChange={handleSignupInput}
+                        value={signupFormData.password}
+                        required
+                    />
+                    <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+                </Form.Group>
+
+                <Button
+                    disabled={!(signupFormData.username && signupFormData.email && signupFormData.password)}
+                    type='submit'
+                    variant='success'
+                >
+                    Submit
+                </Button>
             </Form>
         </>
     );
