@@ -17,7 +17,7 @@ const typeDefs = gql`
         year: Int!
         color: String
         mileage: Int
-        createdAt: Date
+        createdAt: String
         username: String!
     }
 
