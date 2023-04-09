@@ -1,6 +1,9 @@
 .App {
   text-align: center;
+  background-image: linear-gradient(silver, black);
+  height: 100%;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -27,6 +30,8 @@
 .App-link {
   color: #61dafb;
 }
+
+
 
 .subtitle {
   margin-left: 1%;
