@@ -12,6 +12,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header/';
 import Footer from './components/Footer';
+import Content from './pages/Content';
 import Profile from './pages/Profile';
 
 const httpLink = createHttpLink({
@@ -38,6 +39,7 @@ const client = new ApolloClient({
 
 
 function App() {
+
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -48,6 +50,8 @@ function App() {
               <Route path='/' element={<Home/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/signup' element={<Signup/>}/>
+              <Route path='/content' element={<Content/>}/>
+              {/* <Route path='' element={</>}/> */}
               <Route path='/me' element={<Profile/>}/>
               {/* <Route path='/profiles/:username' element={<Profile/>}/> */}
               {/* <Route 
