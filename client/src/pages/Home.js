@@ -1,8 +1,8 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-// import ContentsList
-// import ContentForm
+import ContentForm from '../components/ContentForm/index';
+import ContentList from '../components/ContentList/index';
 
 
 import { QUERY_THOUGHTS } from '../utils/queries';
@@ -16,9 +16,12 @@ const Home = () => {
 
   return (
     <main>
-      <div>
-        <div>
-          
+      <div className=''>
+        <div className=''>
+          <ContentForm/>
+        </div>
+        <div className=''>
+          {/* <ContentList contents={} title=""/> */}
         </div>
       </div>
     </main>
@@ -26,3 +29,9 @@ const Home = () => {
 }
 
 export default Home
+
+
+/*
+  Note:
+  Check App.JS notes.
+*/
