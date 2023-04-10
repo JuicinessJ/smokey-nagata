@@ -17,6 +17,18 @@ code {
     monospace;
 }
 
+.sitetitle {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin: 1%;
+}
+
+.cartitle {
+  margin: 3%;
+  margin-top: 0%;
+}
+
 .subtitle {
   margin-left: 1%;
 }
@@ -28,6 +40,10 @@ code {
 
 .imageandspecs {
   display: flex;
+  border: 3px solid black;
+  border-radius: 5%;
+  margin: 1%;
+  background-image: linear-gradient(rgb(230, 230, 230), rgb(124, 124, 124));
 }
 
 .bidform {
@@ -38,6 +54,7 @@ code {
   height: 100%;
   margin: 10%;
   padding: 10%;
+  margin-left: 50%;
 }
 
 .bidformitems {
@@ -65,7 +82,9 @@ code {
 
 .carspecs {
   display: flex;
-  margin-right: -5%; 
+  margin-right: -5%;
+  margin-right: -5%;
+  margin-left: -5%; 
 }
 
 .specsinfo {
@@ -78,7 +97,7 @@ code {
   background-color: silver;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 10%;
-  margin: 20%;
+  margin: 35%;
   padding: 3%;
 }
 
@@ -91,6 +110,18 @@ code {
   background-color: rgb(70, 79, 255);
   color: white;
   border-radius: 5px;
+}
+
+.posterinfo {
+  border: 2px solid rgb(0, 0, 0);
+  margin: 5%;
+  display: flex;
+  color: rgb(78, 0, 141);
+  border-radius: 5%;
+}
+
+.posterinfoitem {
+  margin: 2%;
 }
 
 .footer {

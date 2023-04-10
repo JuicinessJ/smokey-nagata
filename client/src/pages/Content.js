@@ -5,7 +5,7 @@ import CarPic from '../assets/images/lincoln-continental.jpg'
 const index = () => {
   return (
     <div className='maincontent'>
-        <h1 className='sitetitle'>This Car In This Area</h1>
+        <h1 className='sitetitle'><p className='cartitle'>This.Car</p> In <p className='cartitle'>This.Location</p> Area</h1>
             <div className='imageandspecs'>
                 <img className='carpic' src={CarPic} alt='car for sale'></img>
                 <div className='carspecs'>
@@ -21,10 +21,11 @@ const index = () => {
         <div className='bidformcontainer'>
                 <BidForm />
             </div>
+        <h2>This vehicle was posted for sale by:</h2>
         <div className='posterinfo'>
-            <p>This car was posted by User</p>
-            <p>User.Location</p>
-            <p>View Profile</p>
+            <p className='posterinfoitem' id='posterinfouser'>User.username</p>
+            <p className='posterinfoitem' id='posterinfolocation'>User.Location</p>
+            <p className='posterinfoitem' id='posterinfolink'>View Profile</p>
         </div>
     </div>
   )
