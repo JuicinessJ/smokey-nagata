@@ -1,6 +1,6 @@
 import React from 'react'
 
-const index = () => {
+const Footer = () => {
   return (
     <div className='footer'>
       <p className='footercredit'>Smokey Nagata is brought to you by ...</p>
@@ -22,4 +22,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Footer
