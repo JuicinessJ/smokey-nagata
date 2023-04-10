@@ -41,11 +41,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="App">
-          <header>
+        <div className="">
             <Header />
-          </header>
-          <div>
+          <div className="container">
             <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/login' element={<Login/>}/>
@@ -53,14 +51,12 @@ function App() {
               <Route path='/me' element={<Profile/>}/>
               {/* <Route path='/profiles/:username' element={<Profile/>}/> */}
               {/* <Route 
-                path="/content/:contentId" 
+                path="/contents/:contentId" 
                 element={<SingleContent/>}
               /> */}
             </Routes>
           </div>
-          <footer>
             <Footer/>
-          </footer>
         </div>
       </Router>
     </ApolloProvider>
