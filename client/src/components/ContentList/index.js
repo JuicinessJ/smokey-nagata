@@ -1,9 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const index = () => {
+const ContentList = (
+  { contents,
+    title, 
+    showTitle = true, 
+    /*showUsername = true*/
+  }) => {
+    if (!contents.length) {
+      return <h3>No Content Yet</h3>;
+    }
+
   return (
     <div>index</div>
   )
 }
 
-export default index
+export default ContentList;
