@@ -62,3 +62,8 @@ function App() {
 }
 
 export default App;
+
+/*
+  Notes:
+  Might remove the Header and Footer from App and import it inside Home. At the same time Might not even need the Footer for this project. However, trying to adopt Joshua idea of just having a modal or card pop in front of the page to do login/signup without directing to new page. Need to trial/error.
+*/

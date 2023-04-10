@@ -15,14 +15,18 @@ const Home = () => {
 
 
   return (
-    <main>
+    <div>
       <div>
-        <div>
-          
-        </div>
+        
       </div>
-    </main>
+    </div>
   )
 }
 
 export default Home
+
+
+/*
+  Note:
+  Check App.JS notes.
+*/
