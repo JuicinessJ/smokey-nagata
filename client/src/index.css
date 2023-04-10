@@ -22,12 +22,64 @@ code {
 }
 
 .carpic {
-  max-width: 75%;
+  max-width: 50%;
   margin: 2%;
 }
 
-.picandbidform {
+.imageandspecs {
   display: flex;
+}
+
+.bidform {
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5%;
+  background-color: green;
+  width: 275%;
+  height: 100%;
+  margin: 10%;
+  padding: 10%;
+}
+
+.bidformitems {
+  list-style: none;
+  margin: 5%;
+  width: 80%;
+  margin-left: -8%;
+}
+
+.bidformname {
+  width: 100%;
+  margin: 1%;
+}
+
+.bidformbid {
+  width: 100%;
+  margin: 1%;
+}
+
+.bidformmsg {
+  height: 5em;
+  width: 100%;
+  margin: 1%;
+}
+
+.carspecs {
+  display: flex;
+  margin-right: -5%; 
+}
+
+.specsinfo {
+  margin: 5%;
+  margin-top: 0%;
+  color: rgb(78, 0, 141);
+}
+
+.submitbtn {
+  background-color: silver;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10%;
+  margin: 20%;
+  padding: 3%;
 }
 
 .bidformcontainer {

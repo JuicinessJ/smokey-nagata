@@ -14,10 +14,8 @@ const BidForm = () => {
             <li>
                 <input className='bidformmsg' type='text' placeholder='Add a message (optional)'></input>
             </li>
-            <li>
-                <btn className='submitbtn' id='bidformsubmitbtn'>Submit</btn>
-            </li>
         </ul>
+        <btn className='submitbtn' id='bidformsubmitbtn'>Submit</btn>
     </div>
   )
 }
