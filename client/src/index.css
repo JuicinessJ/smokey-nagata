@@ -21,6 +21,10 @@ code {
   display: none;
 }
 
+.showmsg {
+  display: flex;
+}
+
 .sitetitle {
   display: flex;
   flex-wrap: wrap;

@@ -96,7 +96,7 @@ const SignupForm = () => {
                 </Form.Group>
                 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='location'>Address</Form.Label>
+                    <Form.Label htmlFor='location'></Form.Label>
                     <Form.Control
                         type='location'
                         placeholder='Your address'
@@ -105,7 +105,7 @@ const SignupForm = () => {
                         value={signupFormData.location}
                         required
                     />
-                    <Form.Control.Feedback type='invalid'>An address is required!</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid' className='hidden'>An address is required!</Form.Control.Feedback>
                 </Form.Group>
 
                 <Button
