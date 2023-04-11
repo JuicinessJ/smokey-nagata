@@ -23,10 +23,10 @@ const typeDefs = gql`
     }
 
     type Bid {
-    _id: ID
-    username: String!
-    amount: Int!
-    createdAt: String
+        _id: ID
+        username: String!
+        amount: Int!
+        createdAt: String
   }
 
 
@@ -49,6 +49,18 @@ const typeDefs = gql`
         login(
             email: String!,
             password: String!): Auth
+        addPost(
+            make: String!,
+            model: String!,
+            year: Int!,
+            color: String,
+            condition: String,
+            mileage: Int,
+            username: String!): Post
+        addBid(
+            postId: ID!,
+            amount: Int!,
+            username: String!): Post
     }
 `;
 
