@@ -1,5 +1,4 @@
 const { Schema, model} = require('mongoose');
-const bidSchema = require('./Bid');
 const dayjs = require('dayjs');
 
 function dateFormat(date) {
@@ -40,7 +39,23 @@ const postSchema = new Schema(
             required: true,
         },
         // add bids array
-        bids: [bidSchema],
+        bids: [
+            {
+                username: {
+                    type: String,
+                    required: true
+                },
+                amount: {
+                    type: Number,
+                    required: true
+                },
+                createdAt: {
+                    type: Date,
+                    default: Date.now,
+                    get: (date) => dateFormat(date),
+                }
+            }
+        ],
         //possible exporation date
     },
     {
