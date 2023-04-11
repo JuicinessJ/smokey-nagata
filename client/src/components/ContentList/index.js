@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MiniPost from '../MiniPost'
+
 
 const ContentList = (
   { contents,
@@ -12,7 +14,12 @@ const ContentList = (
     }
 
   return (
-    <div>index</div>
+    <div>
+      <h1 className='homepagetitle'>Vehicles For Sale In Your Area</h1>
+      <div className='minipostcontainer'>
+        <MiniPost />
+      </div>
+    </div>
   )
 }
 

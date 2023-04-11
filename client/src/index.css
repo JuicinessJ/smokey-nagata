@@ -32,6 +32,42 @@ code {
   margin: 1%;
 }
 
+.minipostcontainer {
+  border: 2px solid black;
+  background-image: linear-gradient(rgb(225, 225, 225), rgb(144, 144, 144));
+  max-width: 80%;
+  margin: 10%;
+  border-radius: 5%;
+}
+
+.miniposttitle {
+  font-size: medium;
+  margin: 7%;
+  padding: 1%;
+}
+
+.minipostpicandtitle {
+  display: flex;
+}
+
+.minipostcarpic {
+  max-width: 50%;
+  border-radius: 10%;
+}
+
+.minipostlower {
+  display: flex;
+}
+
+.minipostinfo {
+  padding: 2%;
+  width: 45%;
+}
+
+.minipostinfotitle {
+  font-size: 14px;
+}
+
 .cartitle {
   margin: 3%;
   margin-top: 0%;
@@ -115,9 +151,18 @@ code {
 }
 
 .button {
-  background-color: rgb(70, 79, 255);
+  background-image: linear-gradient(rgba(255, 217, 0, 0.768), rgb(162, 138, 0));
   color: white;
   border-radius: 5px;
+  width: 100px;
+  height: 50px;
+  margin: 5%;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 .posterinfo {
@@ -134,6 +179,11 @@ code {
 
 .signupform {
   margin: 5%;
+  margin-left: 15%;
+}
+
+.mb-3 {
+  width: 50%;
 }
 
 .footer {

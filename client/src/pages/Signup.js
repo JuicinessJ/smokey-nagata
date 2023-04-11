@@ -52,6 +52,38 @@ const SignupForm = () => {
         });
     };
 
+    // function invalidEmail() {
+    //     const signupemailerror = document.querySelector('#signupemailerror');
+    //     const signupformemail = document.querySelector('#signupformemail');
+    //     if (signupformemail.value !== /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/) {
+    //         signupemailerror.setAttribute('class', 'showmsg');
+    //     }
+    //   }
+    
+    //   function invalidPassword() {
+    //     const signuppassworderror = document.querySelector('#signuppassworderror');
+    //     const signupformpassword = document.querySelector('#signupformpassword');
+    //     if (signupformpassword.value === '') {
+    //     signuppassworderror.setAttribute('class', 'showmsg');
+    //     }
+    //   }
+
+    //   function invalidUsername() {
+    //     const signupusernameerror = document.querySelector('#signupusernameerror');
+    //     const signupformusername = document.querySelector('#signupformusername');
+    //     if (signupformusername.value === '') {
+    //     signupusernameerror.setAttribute('class', 'showmsg');
+    //     }
+    //   }
+    
+    //   function invalidLocation() {
+    //     const loginpassworderror = document.querySelector('#loginpassworderror');
+    //     const loginformpassword = document.querySelector('#loginformpassword');
+    //     if (loginformpassword.value === '') {
+    //     loginpassworderror.setAttribute('class', 'showmsg');
+    //     }
+    //   }
+
     return (
         <>
             <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='signupform'>
@@ -62,11 +94,13 @@ const SignupForm = () => {
                         type='text'
                         placeholder='Your username'
                         name='username'
+                        id='signupformusername'
                         onChange={handleSignupInput}
                         value={signupFormData.username}
+                        //onBlur={invalidUsername}
                         required
                     />
-                    <Form.Control.Feedback type='invalid' className='hidden'>Username is required!</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid' id='signupusernameerror' className='hidden'>Username is required!</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
@@ -75,11 +109,13 @@ const SignupForm = () => {
                         type='email'
                         placeholder='Your email address'
                         name='email'
+                        id='signupformemail'
                         onChange={handleSignupInput}
                         value={signupFormData.email}
+                        //onBlur={invalidEmail}
                         required
                     />
-                    <Form.Control.Feedback type='invalid' className='hidden'>Email is required</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid' id='signupemailerror' className='hidden'>Email is required</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
@@ -90,9 +126,11 @@ const SignupForm = () => {
                         name='password'
                         onChange={handleSignupInput}
                         value={signupFormData.password}
+                        id='signupformpassword'
+                        //onBlur={invalidPassword}
                         required
                     />
-                    <Form.Control.Feedback type='invalid' className='hidden'>Password is required!</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid' id='signuppassworderror' className='hidden'>Password is required!</Form.Control.Feedback>
                 </Form.Group>
                 
                 <Form.Group className='mb-3'>
@@ -101,11 +139,13 @@ const SignupForm = () => {
                         type='location'
                         placeholder='Your address'
                         name='address'
+                        id='signupformlocation'
                         onChange={handleFormSubmit}
                         value={signupFormData.location}
+                        //onBlur={invalidLocation}
                         required
                     />
-                    <Form.Control.Feedback type='invalid' className='hidden'>An address is required!</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid' id='signuplocationerror' className='hidden'>An address is required!</Form.Control.Feedback>
                 </Form.Group>
 
                 <Button

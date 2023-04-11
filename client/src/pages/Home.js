@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
+import MiniPost from '../components/MiniPost'
 
 import ContentForm from '../components/ContentForm/index';
 import ContentList from '../components/ContentList/index';
@@ -18,7 +19,7 @@ const Home = () => {
     <main>
       <div className=''>
         <div className=''>
-          <ContentForm/>
+          <MiniPost/>
         </div>
         <div className=''>
           {/* <ContentList contents={} title=""/> */}

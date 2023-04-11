@@ -31,21 +31,21 @@ const Login = () => {
     setFormState({email: '', password: ''});
   };
 
-  function invalidEmail() {
-    const loginemailerror = document.querySelector('#loginemailerror');
-    const loginformemail = document.querySelector('#loginformemail');
-    if (loginformemail.value !== 'gib@gab.com') {
-    loginemailerror.setAttribute('class', 'showmsg');
-    }
-  }
+  // function invalidEmail() {
+  //   const loginemailerror = document.querySelector('#loginemailerror');
+  //   const loginformemail = document.querySelector('#loginformemail');
+  //   if (loginformemail.value !== 'gib@gab.com') {
+  //   loginemailerror.setAttribute('class', 'showmsg');
+  //   }
+  // }
 
-  function invalidPassword() {
-    const loginpassworderror = document.querySelector('#loginpassworderror');
-    const loginformpassword = document.querySelector('#loginformpassword');
-    if (loginformpassword.value === '') {
-    loginpassworderror.setAttribute('class', 'showmsg');
-    }
-  }
+  // function invalidPassword() {
+  //   const loginpassworderror = document.querySelector('#loginpassworderror');
+  //   const loginformpassword = document.querySelector('#loginformpassword');
+  //   if (loginformpassword.value === '') {
+  //   loginpassworderror.setAttribute('class', 'showmsg');
+  //   }
+  // }
 
   return (
     // <main>
@@ -69,7 +69,7 @@ const Login = () => {
             id='loginformemail'
             onChange={handleChange}
             value={formState.email}
-            onBlur={invalidEmail}
+            //onBlur={invalidEmail}
             required
           />
           <Form.Control.Feedback type='invalid' id='loginemailerror' className='hidden'>Email is required!</Form.Control.Feedback>
@@ -82,7 +82,7 @@ const Login = () => {
             name='password'
             onChange={handleChange}
             value={formState.password}
-            onBlur={invalidPassword}
+            //onBlur={invalidPassword}
             required
           />
           <Form.Control.Feedback type='invalid' id='loginpassworderror' className='hidden'>Password is required!</Form.Control.Feedback>
