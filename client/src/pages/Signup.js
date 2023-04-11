@@ -54,10 +54,10 @@ const SignupForm = () => {
 
     return (
         <>
-            <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+            <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='signupform'>
 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='username'>Username</Form.Label>
+                    <Form.Label htmlFor='username'></Form.Label>
                     <Form.Control
                         type='text'
                         placeholder='Your username'
@@ -66,11 +66,11 @@ const SignupForm = () => {
                         value={signupFormData.username}
                         required
                     />
-                    <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid' className='hidden'>Username is required!</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='email'>Email</Form.Label>
+                    <Form.Label htmlFor='email'></Form.Label>
                     <Form.Control
                         type='email'
                         placeholder='Your email address'
@@ -79,11 +79,11 @@ const SignupForm = () => {
                         value={signupFormData.email}
                         required
                     />
-                    <Form.Control.Feedback type='invalid'>Email is required</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid' className='hidden'>Email is required</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='password'>Password</Form.Label>
+                    <Form.Label htmlFor='password'></Form.Label>
                     <Form.Control 
                         type='password'
                         placeholder='Your password'
@@ -92,7 +92,7 @@ const SignupForm = () => {
                         value={signupFormData.password}
                         required
                     />
-                    <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+                    <Form.Control.Feedback type='invalid' className='hidden'>Password is required!</Form.Control.Feedback>
                 </Form.Group>
                 
                 <Form.Group className='mb-3'>
