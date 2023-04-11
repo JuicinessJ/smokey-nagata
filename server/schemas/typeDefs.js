@@ -63,7 +63,7 @@ const typeDefs = gql`
             username: String!): Post
         removePost(postId: ID!): Post
         removebid(postId: ID!, bidId: ID!): Post
-        removeUser(userId: ID!)
+        removeUser(userId: ID!): User
     }
 `;
 
