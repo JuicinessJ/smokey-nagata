@@ -65,6 +65,23 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    addBid: async (parent, { postId, amount }, context) => {
+      if (context.user) {
+        return Post.findOneAndUpdate(
+          { _id: postId },
+          {
+            $addToSet: {
+              bids: { amount, username: context.user.username },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
 };
 
