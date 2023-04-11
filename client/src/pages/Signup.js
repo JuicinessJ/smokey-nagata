@@ -7,7 +7,7 @@ import { useMutation } from '@apollo/client';
 const SignupForm = () => {
 
     // set initial form state with username, email, and password
-    const [signupFormData, setSignupFormData] = useState({ username: '', email: '', password: ''});
+    const [signupFormData, setSignupFormData] = useState({ username: '', email: '', password: '', location: ''});
     // set state for form validation
     const [validated] = useState(false);
 
@@ -48,6 +48,7 @@ const SignupForm = () => {
             username: '',
             email: '',
             password: '',
+            location: '',
         });
     };
 
@@ -92,6 +93,19 @@ const SignupForm = () => {
                         required
                     />
                     <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+                </Form.Group>
+                
+                <Form.Group className='mb-3'>
+                    <Form.Label htmlFor='location'>Address</Form.Label>
+                    <Form.Control
+                        type='location'
+                        placeholder='Your address'
+                        name='address'
+                        onChange={handleFormSubmit}
+                        value={signupFormData.location}
+                        required
+                    />
+                    <Form.Control.Feedback type='invalid'>An address is required!</Form.Control.Feedback>
                 </Form.Group>
 
                 <Button
