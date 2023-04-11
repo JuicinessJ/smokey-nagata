@@ -19,7 +19,16 @@ const typeDefs = gql`
         mileage: Int
         createdAt: String
         username: String!
+        bids: [Bid]!
     }
+
+    type Bid {
+    _id: ID
+    username: String!
+    amount: Int!
+    createdAt: String
+  }
+
 
     type Auth {
         token: ID!
