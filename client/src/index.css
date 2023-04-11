@@ -17,6 +17,10 @@ code {
     monospace;
 }
 
+.hidden {
+  display: none;
+}
+
 .sitetitle {
   display: flex;
   flex-wrap: wrap;
@@ -124,6 +128,10 @@ code {
   margin: 2%;
 }
 
+.signupform {
+  margin: 5%;
+}
+
 .footer {
   display: flex;
   justify-content: center;
@@ -131,4 +139,82 @@ code {
 
 .footercredit {
   margin-top: 3%;
+}
+
+@media screen and (min-width: 500px) {
+  .sitetitle {
+    justify-content: space-evenly;
+  }
+  
+  .carspecs {
+    margin-left: 0%;
+    margin-top: 2%;
+  }
+
+  .postertitle {
+    margin-left: 5%;
+  }
+
+  .bidform {
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .carspecs {
+    margin-left: 0%;
+    margin-top: 2%;
+    font-size: 18px;
+  }
+
+  .postertitle {
+    margin-left: 5%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .carspecs {
+    margin-left: 5%;
+    margin-top: 2%;
+    font-size: 20px;
+  }
+
+  .postertitle {
+    margin-left: 5%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .imageandspecs {
+    max-width: 850px;
+  }
+
+  .imgspecsandbidform {
+    display: flex;
+  }
+  
+  .carspecs {
+    margin-left: 0%;
+    margin-top: 2%;
+    font-size: 20px;
+  }
+
+  .postertitle {
+    margin-left: 5%;
+  }
+
+  .bidformcontainer {
+    margin-left: 0%;
+  }
+
+  .bidform {
+    margin-left: 0%;
+    max-height: 300px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bidform {
+    margin-left: 30%;
+  }
 }
