@@ -7,6 +7,9 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    users: async () => {
+      return User.find().populate('posts');
+    },
     me: async (package, args, context) => {
       if (context.user) {
         return User.findOne({
@@ -14,6 +17,13 @@ const resolvers = {
         });
       }
       throw new AuthenticationError("You need to be logged in!");
+    },
+    posts: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Post.find(params).sort({ createdAt: -1 });
+    },
+    post: async (parent, { postId }) => {
+      return Post.findOne({ _id: postId });
     },
   },
 
