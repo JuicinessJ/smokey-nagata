@@ -43,6 +43,12 @@ const Login = () => {
     //   </div>
     // </main>
     <>
+      {data ? (
+        <p>
+        Success! You may now head{' '}
+        <Link to="/">back to the homepage.</Link>
+      </p>
+      ) : (
       <Form noValidate validated={data} onSubmit={handleFormSubmit}>
         <Form.Group>
           <Form.Label htmlFor='email'>Email</Form.Label>
@@ -78,7 +84,7 @@ const Login = () => {
         </Button>
 
       </Form>
-    
+      )}
     </>
   )
 }
