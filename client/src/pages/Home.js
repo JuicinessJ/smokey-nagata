@@ -5,12 +5,12 @@ import ContentForm from '../components/ContentForm/index';
 import ContentList from '../components/ContentList/index';
 
 
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_PROFILES } from '../utils/queries';
 
 
 const Home = () => {
   // Don't know if correct
-  //const { loading, data } = useQuery(QUERY_THOUGHTS);
+  //const { loading, data } = useQuery(QUERY_PROFILES);
   //const contents = data?.contents || [];
 
 
