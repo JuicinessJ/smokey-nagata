@@ -15,6 +15,9 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    post: async (parent, { postId }) => {
+      return Post.findOne({ _id: postId });
+    },
   },
 
   Mutation: {
