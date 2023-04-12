@@ -2,16 +2,16 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import MiniPost from '../components/MiniPost'
 
-import ContentForm from '../components/ContentForm/index';
-import ContentList from '../components/ContentList/index';
+import PostForm from '../components/PostForm/index';
+import PostList from '../components/PostList/index';
 
 
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_PROFILES } from '../utils/queries';
 
 
 const Home = () => {
   // Don't know if correct
-  //const { loading, data } = useQuery(QUERY_THOUGHTS);
+  //const { loading, data } = useQuery(QUERY_PROFILES);
   //const contents = data?.contents || [];
 
 
@@ -19,10 +19,10 @@ const Home = () => {
     <main>
       <div className=''>
         <div className=''>
-          <MiniPost/>
+          <PostForm/>
         </div>
         <div className=''>
-          {/* <ContentList contents={} title=""/> */}
+          {/* <PostList contents={} title=""/> */}
         </div>
       </div>
     </main>

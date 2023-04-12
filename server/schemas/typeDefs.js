@@ -19,7 +19,16 @@ const typeDefs = gql`
         mileage: Int
         createdAt: String
         username: String!
+        bids: [Bid]!
     }
+
+    type Bid {
+        _id: ID
+        username: String!
+        amount: Int!
+        createdAt: String
+  }
+
 
     type Auth {
         token: ID!
@@ -40,6 +49,21 @@ const typeDefs = gql`
         login(
             email: String!,
             password: String!): Auth
+        addPost(
+            make: String!,
+            model: String!,
+            year: Int!,
+            color: String,
+            condition: String,
+            mileage: Int,
+            username: String!): Post
+        addBid(
+            postId: ID!,
+            amount: Int!,
+            username: String!): Post
+        removePost(postId: ID!): Post
+        removeBid(postId: ID!, bidId: ID!): Post
+        removeUser(userId: ID!): User
     }
 `;
 
