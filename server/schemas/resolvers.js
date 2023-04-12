@@ -94,7 +94,24 @@ const resolvers = {
           { $pull: { posts: post._id } }
         );
 
-        return thought;
+        return post;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removeBid: async (parent, { postId, bidId }, context) => {
+      if (context.user) {
+        return Post.findOneAndUpdate(
+          { _id: postId },
+          {
+            $pull: {
+              bids: {
+                _id: bidId,
+                username: context.user.username,
+              },
+            },
+          },
+          { new: true }
+        );
       }
       throw new AuthenticationError('You need to be logged in!');
     },
