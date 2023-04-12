@@ -15,6 +15,12 @@ export const QUERY_ME = gql`
             }
         }
 `;
+
+// export const QUERY_POSTS = gql`
+//     query posts {
+
+//     }
+// `;
 // export const QUERY_PROFILES = gql`
 //     query allProfiles {
 //         profiles {
