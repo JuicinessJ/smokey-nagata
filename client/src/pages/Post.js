@@ -5,7 +5,7 @@ import CarPic from '../assets/images/lincoln-continental.jpg'
 const index = () => {
 
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
-//   const { postId } = useParams();
+  const { postId } = useParams();
 
   return (
     <div className='maincontent'>
@@ -24,7 +24,7 @@ const index = () => {
                     </div>
                 </div>
                 <div className='bidformcontainer'>
-                    <BidForm />
+                    <BidForm postId={post._id}/>
                 </div>
             </div>
         <div className='poster'>
