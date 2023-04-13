@@ -1,38 +1,31 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import MiniPost from '../components/MiniPost'
 
-import PostForm from '../components/PostForm/index';
-import PostList from '../components/PostList/index';
+import PostList from '../components/PostList';
 
-
-import { QUERY_PROFILES } from '../utils/queries';
-
+import { QUERY_POSTS } from '../utils/queries';
+import MiniPost from '../components/MiniPost';
 
 const Home = () => {
-  // Don't know if correct
-  //const { loading, data } = useQuery(QUERY_PROFILES);
-  //const contents = data?.contents || [];
-
+  const { loading, data } = useQuery(QUERY_POSTS);
+  const posts = data?.posts || [];
 
   return (
     <main>
-      <div className=''>
-        <div className=''>
-          <PostForm/>
-        </div>
-        <div className=''>
-          {/* <PostList contents={} title=""/> */}
+      <div className="flex-row justify-center">
+        <div className="col-12 col-md-8 mb-3">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <PostList
+              posts={posts}
+              title="Vehicles for sale"
+            />
+          )}
         </div>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Home
-
-
-/*
-  Note:
-  Check App.JS notes.
-*/
+export default Home;
