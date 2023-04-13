@@ -28,7 +28,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_POST = gql`
-  mutation addPost($make: String!, $model: String!, $year: Int!, $username: String!, $color: String, $condition: String, $mileage: Int) {
+  mutation addPost($make: String!, $model: String!, $year: Int!, $color: String, $condition: String, $mileage: Int) {
   addPost(make: $make, model: $model, year: $year, username: $username, color: $color, condition: $condition, mileage: $mileage) {
     _id
     color
@@ -46,7 +46,7 @@ export const ADD_POST = gql`
 `;
 
 export const ADD_BID = gql`
-  mutation addBid($postId: ID!, $amount: Int!, $username: String!) {
+  mutation addBid($postId: ID!, $amount: Int!) {
   addBid(postId: $postId, amount: $amount, username: $username) {
     _id
   }

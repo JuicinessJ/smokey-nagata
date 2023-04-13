@@ -57,15 +57,17 @@ const typeDefs = gql`
             year: Int!,
             color: String,
             condition: String,
-            mileage: Int,
-            username: String!): Post
+            mileage: Int,): Post
         addBid(
             postId: ID!,
-            amount: Int!,
-            username: String!): Post
+            amount: Int!): Post
         removePost(postId: ID!): Post
         removeBid(postId: ID!, bidId: ID!): Post
-        removeUser(userId: ID!): User
+        updateUser(
+            userId: ID!,
+            username: String!,
+            email: String!,
+            location: String!,): User
     }
 `;
 
