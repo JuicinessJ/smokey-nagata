@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 
 import { ADD_BID } from '../utils/mutations';
-import Auth from '../utils/auth'
+import Auth from '../utils/auth';
 
 const BidForm = ({ postId }) => {
   const [amount, setAmount] = useState(0);
