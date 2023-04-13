@@ -3,6 +3,10 @@ import BidForm from '../components/Bidform'
 import CarPic from '../assets/images/lincoln-continental.jpg'
 
 const index = () => {
+
+  // Use `useParams()` to retrieve value of the route parameter `:profileId`
+//   const { postId } = useParams();
+
   return (
     <div className='maincontent'>
         <h1 className='sitetitle'><p className='cartitle'>This.Car</p> In <p className='cartitle'>This.Location</p> Area</h1>
