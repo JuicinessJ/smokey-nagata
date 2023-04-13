@@ -69,7 +69,7 @@ const Login = () => {
         <Form.Group>
           <Form.Label htmlFor='email'></Form.Label>
           <Form.Control
-            type='text'
+            type='email'
             placeholder='Your email'
             name='email'
             id='loginformemail'
@@ -82,7 +82,7 @@ const Login = () => {
         </Form.Group>
         <Form.Label htmlFor='password'></Form.Label>
           <Form.Control
-            type='text'
+            type='password'
             placeholder='Your password'
             id='loginformpassword'
             name='password'
