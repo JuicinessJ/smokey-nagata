@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_BID } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-const BidForm = ({ postId }) => {
+const BidForm = ( { postId } ) => {
   const [amount, setAmount] = useState(0);
   const [addBid, { error }] = useMutation(ADD_BID);
 
@@ -12,25 +12,22 @@ const BidForm = ({ postId }) => {
     event.preventDefault();
 
     try {
-        const data = await addBid({
+        const { data } = await addBid({
             variables: { 
                 postId, 
-                amount, 
-                username: Auth.getProfile().data.username },
+                amount,
+                username: Auth.getProfile().data.username, 
+            },
         });
 
         
+        setAmount(amount);
     } catch (err) {
         console.error(err);
     }
   }
   
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    if(name === 'amount'){
-        setAmount(value);
-    }
-  }
+  console.log(postId)
   return (
     <div className='bidform'>
         <h1 className='bidformtitle'>Bid on this vehicle</h1>
@@ -41,17 +38,15 @@ const BidForm = ({ postId }) => {
                 onSubmit={handleFormSubmit}
             >
                 <div>
-                    <input className='bidformname' type='text' placeholder='Your Name'></input>
+                    {/* <input className='bidformname' type='text' placeholder='Your Name'></input> */}
                 
                     <input 
                     className='bidformbid' 
-                    type='text' 
-                    value={amount}
+                    type='text'
                     placeholder='Your Bid' 
-                    name='amount' 
-                    onChange={handleChange}></input>
+                    name='amount'></input>
                 
-                    <input className='bidformmsg' type='text' placeholder='Add a message (optional)'></input>
+                    {/* <input className='bidformmsg' type='text' placeholder='Add a message (optional)'></input> */}
                 
                     
 
@@ -59,7 +54,11 @@ const BidForm = ({ postId }) => {
                 
                 <button className='submitbtn' id='bidformsubmitbtn' type='submit'>Add Bid</button>
                 
-                
+                {error && (
+                    <div className="col-12 my-3 bg-danger text-white p-3">
+                        {error.message}
+                    </div>
+                )}
             </form>
         </>
         ) : (
@@ -72,4 +71,4 @@ const BidForm = ({ postId }) => {
   )
 }
 
-export default BidForm
+export default BidForm;
