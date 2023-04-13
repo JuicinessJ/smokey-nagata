@@ -100,7 +100,7 @@ const SignupForm = () => {
                     <Form.Control
                         type='location'
                         placeholder='Your address'
-                        name='address'
+                        name='location'
                         onChange={handleSignupInput}
                         value={signupFormData.location}
                         required
