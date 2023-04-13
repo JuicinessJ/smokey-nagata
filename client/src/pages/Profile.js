@@ -1,5 +1,8 @@
 import React from 'react';
 
+import MyBids from '../components/MyBids';
+import MyVehicles from '../components/MyVehicles';
+
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
@@ -40,7 +43,11 @@ const Profile = () => {
   return (
     <div>
       {/* Need to add something */}
-      Hello
+      <div className='profilecontainer'>
+        <h1 className='profiletitle'>My Profile</h1>
+        <MyBids />
+        <MyVehicles />
+      </div>
     </div>
   )
 }

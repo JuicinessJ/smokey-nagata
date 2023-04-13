@@ -186,6 +186,65 @@ code {
   width: 50%;
 }
 
+.bidscontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bidscontainertitle {
+  text-align: center;
+  margin: 1%;
+}
+
+.bidname {
+  color: rgb(0, 0, 116);
+}
+
+.singlebidcontainer {
+  margin: 1%;
+  background-image: linear-gradient(rgb(219, 219, 219), rgb(119, 119, 119));
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10%;
+}
+
+.singlevehiclecontainer {
+  margin: 1%;
+  background-image: linear-gradient(rgb(0, 213, 0), rgb(1, 69, 1));
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  border: 2px solid black;
+  border-radius: 10%;
+}
+
+.icon {
+  display: inline;
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5%;
+  background-color: rgb(175, 148, 0);
+  padding: 1%;
+  margin: 3%;
+}
+
+.deletebutton {
+  background-image: linear-gradient(rgba(255, 0, 0, 0.768), rgb(162, 0, 0));
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  height: 25px;
+  margin: 4%;
+  text-align: center;
+  border: 2px solid black;
+}
+
 .footer {
   display: flex;
   justify-content: center;
