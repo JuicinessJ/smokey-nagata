@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MiniPost from '../MiniPost'
 
 import CarPic1 from '../../assets/images/lincoln-continental.jpg'
 import CarPic2 from '../../assets/images/Range-Rover-Classic.jpg'

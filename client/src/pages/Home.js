@@ -3,11 +3,10 @@ import { useQuery } from '@apollo/client';
 
 import PostList from '../components/PostList';
 
-import { QUERY_POSTS } from '../utils/queries';
-import MiniPost from '../components/MiniPost';
+import { QUERY_ALL_POSTS } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_POSTS);
+  const { loading, data } = useQuery(QUERY_ALL_POSTS);
   const posts = data?.posts || [];
 
   return (

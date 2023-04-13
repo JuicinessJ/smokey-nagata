@@ -186,10 +186,15 @@ code {
   width: 50%;
 }
 
+.profiletitle {
+  text-align: center;
+}
+
 .bidscontainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
 }
 
 .bidscontainertitle {
@@ -204,7 +209,7 @@ code {
 .singlebidcontainer {
   margin: 1%;
   background-image: linear-gradient(rgb(219, 219, 219), rgb(119, 119, 119));
-  width: 25%;
+  max-width: 25%;
   display: flex;
   justify-content: center;
   border: 2px solid black;
@@ -214,7 +219,7 @@ code {
 .singlevehiclecontainer {
   margin: 1%;
   background-image: linear-gradient(rgb(0, 213, 0), rgb(1, 69, 1));
-  width: 25%;
+  max-width: 25%;
   display: flex;
   justify-content: center;
   color: white;
