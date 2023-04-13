@@ -19,6 +19,7 @@ const Home = () => {
       <div className=''>
         <div className=''>
           <PostForm/>
+          {/* <PostList/> */}
         </div>
         <div className=''>
           {/* <PostList contents={} title=""/> */}
