@@ -14,43 +14,33 @@ export const QUERY_ME = gql`
     }
   }
 `;
-export const QUERY_SINGLE_POST = gql`
-  query getSinglePost($postId: ID!) {
-    post(postId: $postId) {
-      _id
-      color
-      createdAt
-      make
-      mileage
-      model
-      username
-      year
-      bids {
-        _id
-        amount
-        createdAt
-        username
-      }
-    }
-  }
-`;
 
 export const QUERY_ALL_POSTS = gql`
-  query getAllPosts {
-    posts {
+  query posts($username: String) {
+  posts(username: $username) {
+    _id
+    username
+  }
+}
+`;
+
+export const QUERY_SINGLE_POST = gql`
+  query post($postId: ID!) {
+    post(postId: $postId) {
       _id
-      color
-      createdAt
       make
-      mileage
       model
-      username
       year
+      color
+      condition
+      mileage
+      createdAt
+      username
       bids {
         _id
+        username
         amount
         createdAt
-        username
       }
     }
   }

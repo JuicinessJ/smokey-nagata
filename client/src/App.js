@@ -50,7 +50,7 @@ function App() {
               <Route path='/' element={<Home/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/signup' element={<Signup/>}/>
-              <Route path='/post' element={<Post/>}/>
+              <Route path='/post/:postId' element={<Post/>}/>
               {/* <Route path='' element={</>}/> */}
               <Route path='/me' element={<Profile/>}/>
               {/* <Route path='/profiles/:username' element={<Profile/>}/> */}
