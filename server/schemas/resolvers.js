@@ -8,13 +8,13 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('posts');
+      return User.find().populate('cars');
     },
     me: async (package, args, context) => {
       if (context.user) {
         return User.findOne({
           _id: context.user._id,
-        });
+        }).populate('cars');
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -125,6 +125,30 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    // updateUser: async (parent, { userId, username, email, location }, context) => {
+    //   if (context.user) {
+
+    //     const post = await Post.findOneAndUpdate(
+    //       { username: context.user.username},
+    //       {
+    //         username
+    //       });
+
+    //     const user = await User.findOneAndUpdate(
+    //       {_id: userId},
+    //       {
+    //         username,
+    //         email,
+    //         location
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       });
+
+    //     return user;
+    //   }
+    // }
   },
 };
 
