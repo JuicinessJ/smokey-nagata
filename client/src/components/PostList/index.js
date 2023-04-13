@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ContentList = (
-  { contents,
+const PostList = (
+  { posts,
     title, 
     showTitle = true, 
     /*showUsername = true*/
   }) => {
-    if (!contents.length) {
+    if (!posts.length) {
       return <h3>No Content Yet</h3>;
     }
 
@@ -16,4 +16,4 @@ const ContentList = (
   )
 }
 
-export default ContentList;
+export default PostList;

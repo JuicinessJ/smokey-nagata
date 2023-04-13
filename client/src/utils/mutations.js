@@ -28,7 +28,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_POST = gql`
-  mutation AddPost($make: String!, $model: String!, $year: Int!, $username: String!, $color: String, $condition: String, $mileage: Int) {
+  mutation AddPost($make: String!, $model: String!, $year: Int!, $username: String, $color: String, $condition: String, $mileage: Int) {
   addPost(make: $make, model: $model, year: $year, username: $username, color: $color, condition: $condition, mileage: $mileage) {
     _id
     color
