@@ -31,22 +31,20 @@ const BidForm = ({ postId }) => {
         {Auth.loggedIn() ? (
             <>
             <form
+                className="flex-row justify-center justify-space-between-md align-center"
                 onSubmit={handleFormSubmit}
             >
-            <ul className='bidformitems'>
-                <li>
+                <div>
                     <input className='bidformname' type='text' placeholder='Your Name'></input>
-                </li>
-                <li>
+                
                     <input className='bidformbid' type='text' placeholder='Your Bid'></input>
-                </li>
-                <li>
+                
                     <input className='bidformmsg' type='text' placeholder='Add a message (optional)'></input>
-                </li>
-            </ul>
+                </div>
             
+                <div>
                 <button className='submitbtn' id='bidformsubmitbtn' type='submit'>Add Bid</button>
-            
+                </div>
             </form>
         </>
         ) : (
