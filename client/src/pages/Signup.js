@@ -89,7 +89,7 @@ const SignupForm = () => {
             <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='signupform'>
 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='username'></Form.Label>
+                    <Form.Label htmlFor='username'>Username</Form.Label>
                     <Form.Control
                         type='text'
                         placeholder='Your username'
@@ -104,7 +104,7 @@ const SignupForm = () => {
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='email'></Form.Label>
+                    <Form.Label htmlFor='email'>Email</Form.Label>
                     <Form.Control
                         type='email'
                         placeholder='Your email address'
@@ -119,7 +119,7 @@ const SignupForm = () => {
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='password'></Form.Label>
+                    <Form.Label htmlFor='password'>Password</Form.Label>
                     <Form.Control 
                         type='password'
                         placeholder='Your password'
@@ -138,9 +138,8 @@ const SignupForm = () => {
                     <Form.Control
                         type='location'
                         placeholder='Your address'
-                        name='address'
-                        id='signupformlocation'
-                        onChange={handleFormSubmit}
+                        name='location'
+                        onChange={handleSignupInput}
                         value={signupFormData.location}
                         //onBlur={invalidLocation}
                         required
@@ -149,7 +148,7 @@ const SignupForm = () => {
                 </Form.Group>
 
                 <Button
-                    disabled={!(signupFormData.username && signupFormData.email && signupFormData.password)}
+                    disabled={!(signupFormData.username && signupFormData.email && signupFormData.password && signupFormData.location)}
                     type='submit'
                     variant='success'
                 >
