@@ -81,7 +81,8 @@ const SinglePost = () => {
                     </div>
                     </Card>
                     <div className='bidformcontainer'>
-                        <BidForm />
+                        <BidForm postId={postId}/>
+                        <BidList bids={post.bids}/>
                     </div>
             <div className='poster'>
                 <h2 className='postertitle'>This vehicle was posted for sale by:</h2>
