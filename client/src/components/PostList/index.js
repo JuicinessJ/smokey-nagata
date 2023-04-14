@@ -1,9 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 
-import CarPic1 from '../../assets/images/lincoln-continental.jpg'
-import CarPic2 from '../../assets/images/Range-Rover-Classic.jpg'
+import CarPic1 from '../../assets/images/lincoln-continental.jpg';
+import CarPic2 from '../../assets/images/Range-Rover-Classic.jpg';
 
 const PostList = (
   { posts,
