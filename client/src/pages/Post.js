@@ -1,12 +1,13 @@
 import React from 'react'
-import BidForm from '../components/Bidform'
+import BidForm from '../components/BidForm'
+import BidList from '../components/BidList';
 import CarPic1 from '../assets/images/lincoln-continental.jpg'
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_POST } from '../utils/queries'
 
 const SinglePost = () => {
-    // Use `useParams()` to retrieve value of the route parameter `:profileId`
+    // Use `useParams()` to retrieve value of the route parameter `:postId`
     const { postId } = useParams();
   
     const { loading, data } = useQuery(QUERY_SINGLE_POST, {
@@ -15,7 +16,7 @@ const SinglePost = () => {
     });
   
     const post = data?.post || {};
-  
+
     if (loading) {
       return <div>Loading...</div>;
     }
@@ -37,7 +38,8 @@ const SinglePost = () => {
                     </div>
                 </div>
                 <div className='bidformcontainer'>
-                    <BidForm postId={post._id}/>
+                    <BidForm postId={postId}/>
+                    <BidList bids={post.bids}/>
                 </div>
             </div>
         <div className='poster'>
