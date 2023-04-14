@@ -17,21 +17,21 @@ const PostList = () => {
         <Card className='Card' sx={{ maxWidth: 345 }}>
         <CardMedia
         sx={{ height: 140 }}
-        image={CarPic1}
+        image={CarPic2}
         title="green iguana"
         />
         <CardContent className='minipostcontainer'>
             <div className='minipostpicandtitle'>
-                {/* <img className='minipostcarpic' src={CarPic1} alt='car for sale'></img> */}
+                {/* <img className='minipostcarpic' src={CarPic2} alt='car for sale'></img> */}
                 <Typography gutterBottom variant="h5" component="div">
-                    Lincoln Continental
+                    Range Rover Classic
                 </Typography>
             </div>
             <div className='minipostlower'>
                 <div className='minipostinfo'>
                 <Typography variant="body2" color="text.secondary">
                     For sale by: 
-                    <p>Im A Dolphin</p>
+                    <p>Im A Hippo</p>
                 </Typography>
                 </div>
                 <CardActions>

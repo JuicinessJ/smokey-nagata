@@ -32,12 +32,21 @@ code {
   margin: 1%;
 }
 
-.minipostcontainer {
+.minipostboard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* .minipostcontainer {
   border: 2px solid black;
   background-image: linear-gradient(rgb(225, 225, 225), rgb(144, 144, 144));
   max-width: 80%;
   margin: 10%;
   border-radius: 5%;
+} */
+
+.Card {
+  margin: 1%;
 }
 
 .miniposttitle {
@@ -82,7 +91,7 @@ code {
   margin: 2%;
 }
 
-.imageandspecs {
+.singlevehicleview {
   display: flex;
   border: 3px solid black;
   border-radius: 5%;
