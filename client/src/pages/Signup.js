@@ -52,38 +52,6 @@ const SignupForm = () => {
         });
     };
 
-    // function invalidEmail() {
-    //     const signupemailerror = document.querySelector('#signupemailerror');
-    //     const signupformemail = document.querySelector('#signupformemail');
-    //     if (signupformemail.value !== /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/) {
-    //         signupemailerror.setAttribute('class', 'showmsg');
-    //     }
-    //   }
-    
-    //   function invalidPassword() {
-    //     const signuppassworderror = document.querySelector('#signuppassworderror');
-    //     const signupformpassword = document.querySelector('#signupformpassword');
-    //     if (signupformpassword.value === '') {
-    //     signuppassworderror.setAttribute('class', 'showmsg');
-    //     }
-    //   }
-
-    //   function invalidUsername() {
-    //     const signupusernameerror = document.querySelector('#signupusernameerror');
-    //     const signupformusername = document.querySelector('#signupformusername');
-    //     if (signupformusername.value === '') {
-    //     signupusernameerror.setAttribute('class', 'showmsg');
-    //     }
-    //   }
-    
-    //   function invalidLocation() {
-    //     const loginpassworderror = document.querySelector('#loginpassworderror');
-    //     const loginformpassword = document.querySelector('#loginformpassword');
-    //     if (loginformpassword.value === '') {
-    //     loginpassworderror.setAttribute('class', 'showmsg');
-    //     }
-    //   }
-
     return (
         <>
             <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='signupform'>
