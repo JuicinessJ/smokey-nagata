@@ -17,6 +17,7 @@ const SinglePost = () => {
   
     const post = data?.post || {};
 
+    
     if (loading) {
       return <div>Loading...</div>;
     }
