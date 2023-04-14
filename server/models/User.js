@@ -13,7 +13,7 @@ const userSchema = new Schema(
         type: String,
         required: true,
         unique: true,
-        match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'Must use a vaild email']
+        match: [/^([a-zA-Z0-9_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$/, 'Must use a vaild email']
     },
     password: {
         type: String,
@@ -23,7 +23,7 @@ const userSchema = new Schema(
         type: String,
         required: true,
     },
-    cars: [
+    posts: [
         {
             type: Schema.Types.ObjectId,
             ref: 'post'
