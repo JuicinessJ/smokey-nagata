@@ -1,5 +1,6 @@
 import React from 'react'
-import BidForm from '../components/Bidform'
+import BidForm from '../components/BidForm'
+import BidList from '../components/BidList';
 import CarPic1 from '../assets/images/lincoln-continental.jpg'
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
@@ -14,7 +15,7 @@ const SinglePost = () => {
       variables: { postId: postId },
     });
   
-    const post = data?.posts || {};
+    const post = data?.post || {};
 
     if (loading) {
       return <div>Loading...</div>;
@@ -38,6 +39,7 @@ const SinglePost = () => {
                 </div>
                 <div className='bidformcontainer'>
                     <BidForm postId={postId}/>
+                    <BidList bids={post.bids}/>
                 </div>
             </div>
         <div className='poster'>

@@ -20,8 +20,7 @@ const Profile = () => {
     
   );
 
-  const profile = data?.me || [];
-  console.log('this is an auth' + profile.username)
+  const profile = data?.me || {};
 
   // if (Auth.loggedIn() && Auth.getProfile().data.username === profile.username) {
   //   return <Navigate to="/me"/>;

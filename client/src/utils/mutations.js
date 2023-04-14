@@ -49,10 +49,10 @@ export const ADD_BID = gql`
   mutation addBid($postId: ID!, $amount: Int!) {
   addBid(postId: $postId, amount: $amount) {
     _id
+    username
     bids {
       _id
       amount
-      createdAt
       username
     }
   }
