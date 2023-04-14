@@ -14,6 +14,7 @@ import Header from './components/Header/';
 import Footer from './components/Footer';
 import Post from './pages/Post';
 import Profile from './pages/Profile';
+import TempPost from './pages/TempPost';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -50,7 +51,7 @@ function App() {
               <Route path='/' element={<Home/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/signup' element={<Signup/>}/>
-              <Route path='/post/:postId' element={<Post/>}/>
+              <Route path='/post' element={<TempPost/>}/>
               {/* <Route path='' element={</>}/> */}
               <Route path='/me' element={<Profile/>}/>
               {/* <Route path='/profiles/:username' element={<Profile/>}/> */}
