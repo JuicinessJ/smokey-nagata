@@ -52,7 +52,10 @@ const SignupForm = () => {
         });
     };
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> 437ed35db935b3a2db704bd17215ab27b402fe2d
     return (
         <>
             <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='signupform'>

@@ -10,32 +10,24 @@ const BidForm = ( { postId } ) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(event.target.amount.value);
-    console.log(amount);
-    console.log(postId);
-    console.log(Auth.getProfile().data.username);
+    
     try {
         const { data }  = await addBid({
             variables: { 
                 postId, 
                 amount,
-                // username: Auth.getProfile().data.username,
+                
             },
         });
 
         setAmount('');
-        console.log(data);
+        
     } catch (err) {
         console.error('Error:          '+err);
     }
   }
   
-//   const handleChange = (event) => {
-//     const { id , value } = event.target;
-//     if(id === 'bidAmount'){
-//         setAmount(value);
-//     }
-//   };
+
 
 
   return (

@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import PostList from '../components/PostList';
+import PostForm from '../components/PostForm';
 
 import { QUERY_ALL_POSTS } from '../utils/queries';
 
@@ -22,6 +23,9 @@ const Home = () => {
             />
           )}
         </div>
+        <div>
+        <PostForm/>
+      </div>
       </div>
     </main>
   );

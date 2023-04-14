@@ -1,5 +1,6 @@
 import React from 'react';
 
+import PostForm from '../components/PostForm';
 import MyBids from '../components/MyBids';
 import MyVehicles from '../components/MyVehicles';
 
@@ -47,6 +48,7 @@ const Profile = () => {
         <h1 className='profiletitle'>My Profile</h1>
         <MyBids />
         <MyVehicles />
+        <PostForm/>
       </div>
     </div>
   )
