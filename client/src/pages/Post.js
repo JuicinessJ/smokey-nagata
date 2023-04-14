@@ -5,6 +5,23 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_POST } from '../utils/queries'
 
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+
+const style = {
+    width: '100%',
+    maxWidth: 360,
+    bgcolor: 'background.paper',
+  };
+
 const SinglePost = () => {
     // Use `useParams()` to retrieve value of the route parameter `:profileId`
     const { postId } = useParams();
@@ -20,37 +37,61 @@ const SinglePost = () => {
       return <div>Loading...</div>;
     }
 
-  return (
-    <div className='maincontent'>
-        <h1 className='sitetitle'><p className='cartitle'>{post.make} {post.model}</p> In <p className='cartitle'>{post.location}</p> Area</h1>
-            <div className='imgspecsandbidform'>
-                <div className='imageandspecs'>
-                    <img className='carpic' src={CarPic1} alt='car for sale'></img>
-                    <div className='carspecs'>
-                        <ul className='carspecslist'>
-                            <li className='carspecs'>Model:<p className='specsinfo' id='specsinfomodel'>{post.make} {post.model}</p></li>
-                            <li className='carspecs'>Year: <p className='specsinfo' id='specsinfoyear'>{post.year}</p></li>
-                            <li className='carspecs'>Color: <p className='specsinfo' id='specsinfocolor'>{post.color}</p></li>
-                            <li className='carspecs'>Mileage: <p className='specsinfo' id='specsinfomileage'>{post.mileage}</p></li>
-                            <li className='carspecs'>Condition: <p className='specsinfo' id='specsinfocondition'>{post.condition}</p></li>
-                        </ul>
+    return (
+        <div className='singlepost'>
+        <h1 className='cartitle'>{post.make} {post.model}</h1> <p className='cartitle'>{post.location}</p>
+        <Card className='Card' sx={{ maxWidth: 500 }}>
+        <CardMedia
+        sx={{ height: 140 }}
+        image={CarPic1}
+        title="green iguana"
+        />
+        <div>
+                <div className='imgspecsandbidform'>
+                    <div className='imageandspecs'>
+                        {/* <img className='carpic' src={CarPic1} alt='car for sale'></img> */}
+                        <div className='carspecs'>
+                            <List>
+                                <ListItem>
+                                    <ListItemText primary="Model: " />
+                                        <p className='specsinfo' id='specsinfomodel'>{post.make} {post.model}</p>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText primary="Year: " />
+                                        <p className='specsinfo' id='specsinfoyear'>{post.year}</p>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText primary="Color: " />
+                                        <p className='specsinfo' id='specsinfocolor'>{post.color}</p>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText primary="Mileage: " />
+                                        <p className='specsinfo' id='specsinfomileage'>{post.mileage}</p>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText primary="Condition: " />
+                                        <p className='specsinfo' id='specsinfocondition'>{post.condition}</p>
+                                </ListItem>
+                            </List>
+                        </div>
                     </div>
+                    </div>
+                    </div>
+                    </Card>
+                    <div className='bidformcontainer'>
+                        <BidForm />
+                    </div>
+            <div className='poster'>
+                <h2 className='postertitle'>This vehicle was posted for sale by:</h2>
+                <div className='posterinfo'>
+                    <p className='posterinfoitem' id='posterinfouser'>{post.username}</p>
+                    <p className='posterinfoitem' id='posterinfolocation'>{post.location}</p>
+                    <p>View This User</p>
+                    <p className='posterinfoitem' id='posterinfolink'>View Profile</p>
                 </div>
-                <div className='bidformcontainer'>
-                    <BidForm postId={post._id}/>
-                </div>
-            </div>
-        <div className='poster'>
-            <h2 className='postertitle'>This vehicle was posted for sale by:</h2>
-            <div className='posterinfo'>
-                <p className='posterinfoitem' id='posterinfouser'>{post.username}</p>
-                <p className='posterinfoitem' id='posterinfolocation'>{post.location}</p>
-                <p>View This User</p>
-                <p className='posterinfoitem' id='posterinfolink'>View Profile</p>
             </div>
         </div>
-    </div>
-  )
-}
-
-export default SinglePost
+      )
+    }
+    
+    export default SinglePost
