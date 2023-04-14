@@ -34,6 +34,7 @@ const SinglePost = () => {
   
     const post = data?.post || {};
 
+    
     if (loading) {
       return <div>Loading...</div>;
     }
@@ -96,7 +97,8 @@ const SinglePost = () => {
                 </Card>
 
                 <div className='bidformcontainer'>
-                        <BidForm />
+                        <BidForm postId={postId}/>
+                        <BidList bids={post.bids}/>
                     </div>
                     </div>
         </div>
