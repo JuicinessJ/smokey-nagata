@@ -43,14 +43,11 @@ const SinglePost = () => {
         <h1 className='cartitle'>{post.make} {post.model}</h1> <p className='cartitle'>{post.location}</p>
         <Card className='Card' sx={{ maxWidth: 500 }}>
         <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 300 }}
         image={CarPic1}
         title="green iguana"
         />
         <div>
-                <div className='imgspecsandbidform'>
-                    <div className='imageandspecs'>
-                        {/* <img className='carpic' src={CarPic1} alt='car for sale'></img> */}
                         <div className='carspecs'>
                             <List>
                                 <ListItem>
@@ -75,8 +72,6 @@ const SinglePost = () => {
                                 </ListItem>
                             </List>
                         </div>
-                    </div>
-                    </div>
                     </div>
                     </Card>
                     <div className='bidformcontainer'>

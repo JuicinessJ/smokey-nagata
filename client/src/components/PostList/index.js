@@ -21,15 +21,15 @@ const PostList = (
     }
 
     return (
+<div>
+      {posts &&
+        posts.map((post) => (
       <Card className='Card' sx={{ maxWidth: 345 }}>
-
       <CardMedia
       sx={{ height: 140 }}
       image={CarPic1}
       title="green iguana"
       />
-      {posts &&
-        posts.map((post) => (
       <CardContent className='minipostcontainer'>
           <div className='minipostpicandtitle'>
               {/* <img className='minipostcarpic' src={CarPic1} alt='car for sale'></img> */}
@@ -52,10 +52,10 @@ const PostList = (
             </Link>
             </CardActions>
           </div>
-</CardContent>
-        ))}
-</Card>
-
+      </CardContent>
+    </Card>
+    ))}
+</div>
     )
   };
 
