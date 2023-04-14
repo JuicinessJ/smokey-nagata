@@ -31,12 +31,19 @@ const PostForm = (/*{_id or postId}*/) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+    const form = event.target;
+    const formData = new FormData(form);
+
     try {
+      // parseint?
       const { data } = await addPost({
         variables: {
           // ...formState
-          make, model, year, color, mileage
+          make, model, year, color, 
+          condition: null,
+          mileage
         }
+        
       });
       setMake('');
       setModel('');
@@ -56,7 +63,7 @@ const PostForm = (/*{_id or postId}*/) => {
   };
 
   const handleChange = (event) => {
-    const { name, value} = event.target;
+    const { name, value } = event.target;
 
     if (name === 'make') {
       setMake(value);
@@ -65,13 +72,13 @@ const PostForm = (/*{_id or postId}*/) => {
       setModel(value);
     }
     if (name === 'year') {
-      setYear(value);
+      setYear(~~value);
     }
     if (name === 'color') {
       setColor(value);
     }
     if (name === 'mileage') {
-      setMileage(value);
+      setMileage(~~value);
     }
   }
 
@@ -82,20 +89,25 @@ const PostForm = (/*{_id or postId}*/) => {
         <form id='carForm' onSubmit={handleFormSubmit}>
 
           <div>
-            <label>The Make:</label>
-            <input type='text' name='make' id='carMake' value={make} onChange={handleChange}></input>
+            <label>The Make:
+              <input type='text' name='make' id='carMake' value={make} onChange={handleChange}></input>
+            </label>
 
-            <label>The Model:</label>
-            <input type='text' name='model' id='carModel' value={model} onChange={handleChange}></input>
+            <label>The Model:
+              <input type='text' name='model' id='carModel' value={model} onChange={handleChange}></input>
+            </label>
 
-            <label>The Year:</label>
-            <input type='text' name='year' id='carYear' value={year} onChange={handleChange}></input>
+            <label>The Year:
+              <input type='number' name='year' id='carYear' value={year} onChange={handleChange}></input>
+            </label>
 
-            <label>The Color:</label>
-            <input type='text' name='color' id='carColor' value={color} onChange={handleChange}></input>
+            <label>The Color:
+              <input type='text' name='color' id='carColor' value={color} onChange={handleChange}></input>
+            </label>
 
-            <label>The Mileage:</label>
-            <input type='text' name='mileage' id='carMileage' value={mileage} onChange={handleChange}></input>
+            <label>The Mileage:
+              <input type='number' name='mileage' id='carMileage' value={mileage} onChange={handleChange}></input>
+            </label>
           </div>
 
           <button type='submit'>Submit</button>
