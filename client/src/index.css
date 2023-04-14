@@ -32,6 +32,16 @@ code {
   margin: 1%;
 }
 
+.signupform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputfield {
+  max-width: 33%;
+}
+
 .minipostboard {
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +57,19 @@ code {
 
 .Card {
   margin: 1%;
+}
+
+.singlepost {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cartitle {
+  text-align: center;
+}
+
+.carlocation {
+  color: rgb(0, 94, 210);
 }
 
 .miniposttitle {
@@ -91,12 +114,23 @@ code {
   margin: 2%;
 }
 
-.singlevehicleview {
+/* .singlevehicleview {
   display: flex;
   border: 3px solid black;
   border-radius: 5%;
   margin: 1%;
   background-image: linear-gradient(rgb(230, 230, 230), rgb(124, 124, 124));
+} */
+
+.carspecs {
+  display: flex;
+  justify-content: center;
+  margin-right: 25%;
+  font-weight: bold;
+}
+
+.carspectitles {
+  font-weight: bold;
 }
 
 .bidform {
@@ -143,7 +177,7 @@ code {
 .specsinfo {
   margin: 5%;
   margin-top: 0%;
-  color: rgb(78, 0, 141);
+  color:  rgb(0, 94, 210)
 }
 
 .submitbtn {

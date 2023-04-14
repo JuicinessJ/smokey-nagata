@@ -13,6 +13,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
+
 const style = {
   width: '100%',
   maxWidth: 360,
@@ -22,20 +23,19 @@ const style = {
 const SinglePost = () => {
 
 return (
+    <div>
+    <h1 className='cartitle'>Lincoln Continental<p className='carlocation'>In Twin Cities Area</p></h1>
     <div className='singlepost'>
-    <h1 className='cartitle'>Lincoln Continental</h1> <p className='cartitle'>Twin Cities</p>
-    <Card className='Card' sx={{ maxWidth: 500 }}>
+    <Card className='Card' sx={{ minWidth: 400 }}>
     <CardMedia
-    sx={{ height: 140 }}
+    sx={{ height: 300 }}
     image={CarPic1}
     title="green iguana"
     />
     <div>
-            <div className='imgspecsandbidform'>
-                <div className='imageandspecs'>
                     {/* <img className='carpic' src={CarPic1} alt='car for sale'></img> */}
                     <div className='carspecs'>
-                        <List>
+                    <List>
                             <ListItem>
                                 <ListItemText primary="Model: " />
                                     <p className='specsinfo' id='specsinfomodel'>Lincoln Continental</p>
@@ -59,21 +59,27 @@ return (
                         </List>
                     </div>
                 </div>
-                </div>
-                </div>
                 </Card>
-                <div className='bidformcontainer'>
-                    <BidForm />
-                </div>
         <div className='poster'>
-            <h2 className='postertitle'>This vehicle was posted for sale by:</h2>
-            <div className='posterinfo'>
-                <p className='posterinfoitem' id='posterinfouser'>Im A Dolphin</p>
-                <p className='posterinfoitem' id='posterinfolocation'>Minneapolis, MN</p>
-                <p>View This User</p>
-                <p className='posterinfoitem' id='posterinfolink'>View Profile</p>
-            </div>
+
+            <Card className='Card' sx={{ minWidth: 275 }}>
+      <CardContent>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          This vehicle was posted by:
+        </Typography>
+        <Typography variant="h5" component="div">
+          I'm A Dolphin
+        </Typography>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          Twin Cities, MN
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">View User</Button>
+      </CardActions>
+    </Card>
         </div>
+    </div>
     </div>
   )
 }

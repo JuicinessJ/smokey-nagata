@@ -52,44 +52,12 @@ const SignupForm = () => {
         });
     };
 
-    // function invalidEmail() {
-    //     const signupemailerror = document.querySelector('#signupemailerror');
-    //     const signupformemail = document.querySelector('#signupformemail');
-    //     if (signupformemail.value !== /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/) {
-    //         signupemailerror.setAttribute('class', 'showmsg');
-    //     }
-    //   }
-    
-    //   function invalidPassword() {
-    //     const signuppassworderror = document.querySelector('#signuppassworderror');
-    //     const signupformpassword = document.querySelector('#signupformpassword');
-    //     if (signupformpassword.value === '') {
-    //     signuppassworderror.setAttribute('class', 'showmsg');
-    //     }
-    //   }
-
-    //   function invalidUsername() {
-    //     const signupusernameerror = document.querySelector('#signupusernameerror');
-    //     const signupformusername = document.querySelector('#signupformusername');
-    //     if (signupformusername.value === '') {
-    //     signupusernameerror.setAttribute('class', 'showmsg');
-    //     }
-    //   }
-    
-    //   function invalidLocation() {
-    //     const loginpassworderror = document.querySelector('#loginpassworderror');
-    //     const loginformpassword = document.querySelector('#loginformpassword');
-    //     if (loginformpassword.value === '') {
-    //     loginpassworderror.setAttribute('class', 'showmsg');
-    //     }
-    //   }
-
     return (
         <>
             <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='signupform'>
 
-                <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='username'>Username</Form.Label>
+                <Form.Group className='inputfield'>
+                    <Form.Label htmlFor='username'></Form.Label>
                     <Form.Control
                         type='text'
                         placeholder='Your username'
@@ -104,7 +72,7 @@ const SignupForm = () => {
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='email'>Email</Form.Label>
+                    <Form.Label htmlFor='email'></Form.Label>
                     <Form.Control
                         type='email'
                         placeholder='Your email address'
@@ -119,7 +87,7 @@ const SignupForm = () => {
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='password'>Password</Form.Label>
+                    <Form.Label htmlFor='password'></Form.Label>
                     <Form.Control 
                         type='password'
                         placeholder='Your password'
