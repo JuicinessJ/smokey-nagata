@@ -9,6 +9,7 @@ const BidList = ({ bids = [] }) => {
     sortBids.sort((a, b) => {
         return b.amount - a.amount;
     });
+    sortBids.splice(5);
   }
   
   return (
@@ -20,7 +21,7 @@ const BidList = ({ bids = [] }) => {
         Bids
       </h3>
       <div className="flex-row my-4">
-        <p>The highest bid is...</p>
+        <p>The Top 5 Highest Bids Are...</p>
         {sortBids.map((bid) => (
             <div key={bid._id} className="col-12 mb-3 pb-3">
               <div className="p-3 bg-dark text-light bidsContainer">

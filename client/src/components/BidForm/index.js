@@ -5,7 +5,7 @@ import { ADD_BID } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
 const BidForm = ( { postId } ) => {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
   const [addBid, { error }] = useMutation(ADD_BID);
 
   const handleFormSubmit = async (event) => {
@@ -48,7 +48,7 @@ const BidForm = ( { postId } ) => {
                         id='bidAmount'
                         // defaultValue={0}
                         value={amount}
-                        type='number'
+                        type='text'
                         // placeholder='Your Bid' 
                         name='amount'
                         onChange={e => setAmount(~~e.target.value)}
