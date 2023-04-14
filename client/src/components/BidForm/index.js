@@ -5,22 +5,25 @@ import { ADD_BID } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
 const BidForm = ( { postId } ) => {
-//    const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(0);
   const [addBid, { error }] = useMutation(ADD_BID);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(event.target.amount.value);
+    console.log(amount);
     console.log(postId);
     console.log(Auth.getProfile().data.username);
     try {
         const { data }  = await addBid({
             variables: { 
                 postId, 
-                amount: event.target.amount.value,
-                username: Auth.getProfile().data.username,
+                amount,
+                // username: Auth.getProfile().data.username,
             },
         });
+
+        setAmount('');
         console.log(data);
     } catch (err) {
         console.error('Error:          '+err);
@@ -51,12 +54,12 @@ const BidForm = ( { postId } ) => {
                         <input 
                         className='bidformbid'
                         id='bidAmount'
-                        defaultValue={0}
-                        // value={amount}
-                        type='text'
+                        // defaultValue={0}
+                        value={amount}
+                        type='number'
                         // placeholder='Your Bid' 
                         name='amount'
-                        // onChange={handleChange}
+                        onChange={e => setAmount(~~e.target.value)}
                         ></input>
                     </label>
                 
