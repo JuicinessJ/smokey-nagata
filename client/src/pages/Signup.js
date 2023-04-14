@@ -52,10 +52,7 @@ const SignupForm = () => {
         });
     };
 
-<<<<<<< HEAD
     
-=======
->>>>>>> 437ed35db935b3a2db704bd17215ab27b402fe2d
     return (
         <>
             <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='signupform'>
@@ -69,7 +66,6 @@ const SignupForm = () => {
                         id='signupformusername'
                         onChange={handleSignupInput}
                         value={signupFormData.username}
-                        //onBlur={invalidUsername}
                         required
                     />
                     <Form.Control.Feedback type='invalid' id='signupusernameerror' className='hidden'>Username is required!</Form.Control.Feedback>
@@ -84,7 +80,6 @@ const SignupForm = () => {
                         id='signupformemail'
                         onChange={handleSignupInput}
                         value={signupFormData.email}
-                        //onBlur={invalidEmail}
                         required
                     />
                     <Form.Control.Feedback type='invalid' id='signupemailerror' className='hidden'>Email is required</Form.Control.Feedback>
@@ -99,7 +94,6 @@ const SignupForm = () => {
                         onChange={handleSignupInput}
                         value={signupFormData.password}
                         id='signupformpassword'
-                        //onBlur={invalidPassword}
                         required
                     />
                     <Form.Control.Feedback type='invalid' id='signuppassworderror' className='hidden'>Password is required!</Form.Control.Feedback>
@@ -113,7 +107,6 @@ const SignupForm = () => {
                         name='location'
                         onChange={handleSignupInput}
                         value={signupFormData.location}
-                        //onBlur={invalidLocation}
                         required
                     />
                     <Form.Control.Feedback type='invalid' id='signuplocationerror' className='hidden'>An address is required!</Form.Control.Feedback>
