@@ -15,30 +15,43 @@ const PostList = (
       return <h3>No Content Yet</h3>;
     }
 
-      return (
-        <div>
-          {posts && posts.map((post) => (
-        <div className='minipostcontainer'>
-            <div className='minipostpicandtitle'>
-                <img className='minipostcarpic' src={CarPic1} alt='car for sale'></img>
-                <h1 className='miniposttitle'>{post.make} {post.model}</h1>
-            </div>
-            <div className='minipostlower'>
-                <div className='minipostinfo'>
-                    <h2 className='minipostinfotitle'>For Sale By:</h2>
-                    <p className='posterusername'>{post.username}</p>
-                </div>
-                <Link
-                  className="button"
-                  to={`/post/${post._id}`}
-                >
-                  Bid On This Vehicle
-              </Link>
-            </div>
-        </div>
-          ))}
-        </div>
-      )
-    };
+    return (
+<div>
+      {posts &&
+        posts.map((post) => (
+      <Card className='Card' sx={{ maxWidth: 345 }}>
+      <CardMedia
+      sx={{ height: 140 }}
+      image={CarPic1}
+      title="green iguana"
+      />
+      <CardContent className='minipostcontainer'>
+          <div className='minipostpicandtitle'>
+              {/* <img className='minipostcarpic' src={CarPic1} alt='car for sale'></img> */}
+              <Typography gutterBottom variant="h5" component="div">
+                {post.make} {post.model}
+              </Typography>
+          </div>
+          <div className='minipostlower'>
+              <div className='minipostinfo'>
+              <Typography variant="body2" color="text.secondary">
+                  For sale by: 
+                  <p>{post.username}</p>
+              </Typography>
+              </div>
+              <CardActions>
+              <Link
+                to={`/post/${post._id}`}
+              >
+              <Button size='small' variant="contained">Bid On This Vehicle</Button>
+            </Link>
+            </CardActions>
+          </div>
+      </CardContent>
+    </Card>
+    ))}
+</div>
+    )
+  };
 
 export default PostList;

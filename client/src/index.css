@@ -86,9 +86,19 @@ code {
   margin-left: 1%;
 }
 
+.carspecs {
+  display: flex;
+  justify-content: center;
+}
+
 .carpic {
   max-width: 50%;
   margin: 2%;
+}
+
+.singlepost {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .singlevehicleview {

@@ -42,16 +42,13 @@ const SinglePost = () => {
     return (
         <div className='singlepost'>
         <h1 className='cartitle'>{post.make} {post.model}</h1> <p className='cartitle'>{post.location}</p>
-        <Card className='Card' sx={{ maxWidth: 500 }}>
+        <Card className='Card' sx={{ minWidth: 400 }}>
         <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 300 }}
         image={CarPic1}
         title="green iguana"
         />
         <div>
-                <div className='imgspecsandbidform'>
-                    <div className='imageandspecs'>
-                        {/* <img className='carpic' src={CarPic1} alt='car for sale'></img> */}
                         <div className='carspecs'>
                             <List>
                                 <ListItem>
@@ -77,22 +74,33 @@ const SinglePost = () => {
                             </List>
                         </div>
                     </div>
-                    </div>
-                    </div>
                     </Card>
-                    <div className='bidformcontainer'>
+
+
+                    <div className='poster'>
+
+                        <Card className='Card' sx={{ minWidth: 275 }}>
+                <CardContent>
+                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                    This vehicle was posted by:
+                    </Typography>
+                    <Typography variant="h5" component="div">
+                    {post.username}
+                    </Typography>
+                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                    user.location
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Button size="small">View User</Button>
+                </CardActions>
+                </Card>
+
+                <div className='bidformcontainer'>
                         <BidForm postId={postId}/>
                         <BidList bids={post.bids}/>
                     </div>
-            <div className='poster'>
-                <h2 className='postertitle'>This vehicle was posted for sale by:</h2>
-                <div className='posterinfo'>
-                    <p className='posterinfoitem' id='posterinfouser'>{post.username}</p>
-                    <p className='posterinfoitem' id='posterinfolocation'>{post.location}</p>
-                    <p>View This User</p>
-                    <p className='posterinfoitem' id='posterinfolink'>View Profile</p>
-                </div>
-            </div>
+                    </div>
         </div>
       )
     }

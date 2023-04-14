@@ -46,7 +46,6 @@ const Profile = () => {
       {/* Need to add something */}
       <div className='profilecontainer'>
         <h1 className='profiletitle'>My Profile</h1>
-        <MyBids />
         <MyVehicles />
         <PostForm/>
       </div>
