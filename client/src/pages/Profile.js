@@ -11,33 +11,45 @@ import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
+import PostForm from '../components/PostForm';
+
+import Button from '@mui/material/Button';
 
 const Profile = () => {
-  const { username: profileId } = useParams();
+  // const { username: profileId } = useParams();
 
-  const { loading, data } = useQuery(
-    QUERY_ME,
+  // const { loading, data } = useQuery(
+  //   QUERY_ME,
     
-  );
+  // );
 
-  const profile = data?.me || data?.profile || {};
+  // const profile = data?.me || data?.profile || {};
 
-  if (Auth.loggedIn() && Auth.getProfile().data.username === profile.username) {
-    return <Navigate to="/me"/>;
-  }
+  // if (Auth.loggedIn() && Auth.getProfile().data.username === profile.username) {
+  //   return <Navigate to="/me"/>;
+  // }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  // If not logged in
-  if (!profile?.name) {
-    return (
-      <h4>
-        Must be logged in to view profile
-      </h4>
-    );
-  }
+  // // If not logged in
+  // if (!profile?.name) {
+  //   return (
+  //     <h4>
+  //       Must be logged in to view profile
+  //     </h4>
+  //   );
+  // }
+
+
+const showPostForm = () => {
+  const formfields = document.querySelector('#formfields');
+  const createPostBtn = document.querySelector('#createPostBtn');
+  formfields.setAttribute('class', 'formfields');
+  createPostBtn.setAttribute('class', 'hidden');
+};
+
 
   // If logged in
   return (
@@ -45,8 +57,16 @@ const Profile = () => {
       {/* Need to add something */}
       <div className='profilecontainer'>
         <h1 className='profiletitle'>My Profile</h1>
-        <MyBids />
-        <MyVehicles />
+        <MyVehicles
+        // posts={posts}
+        // title="Vehicles for sale"
+          />
+        <Button size='small'
+        id='createPostBtn'
+        variant="contained"
+        onClick={showPostForm}
+        >Create New Post</Button>
+        <PostForm />
       </div>
     </div>
   )
