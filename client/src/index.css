@@ -96,6 +96,11 @@ code {
   margin: 2%;
 }
 
+.singlepost {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .singlevehicleview {
   display: flex;
   border: 3px solid black;
