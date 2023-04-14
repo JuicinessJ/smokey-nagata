@@ -22,34 +22,38 @@ const PostList = (
 
     return (
       <Card className='Card' sx={{ maxWidth: 345 }}>
+
       <CardMedia
       sx={{ height: 140 }}
       image={CarPic1}
       title="green iguana"
       />
+      {posts &&
+        posts.map((post) => (
       <CardContent className='minipostcontainer'>
           <div className='minipostpicandtitle'>
               {/* <img className='minipostcarpic' src={CarPic1} alt='car for sale'></img> */}
               <Typography gutterBottom variant="h5" component="div">
-                  Lincoln Continental
+                {post.make} {post.model}
               </Typography>
           </div>
           <div className='minipostlower'>
               <div className='minipostinfo'>
               <Typography variant="body2" color="text.secondary">
                   For sale by: 
-                  <p>Im A Dolphin</p>
+                  <p>{post.username}</p>
               </Typography>
               </div>
               <CardActions>
               <Link
-                to={`/post/`}
+                to={`/post/${post._id}`}
               >
               <Button size='small' variant="contained">Bid On This Vehicle</Button>
             </Link>
             </CardActions>
           </div>
 </CardContent>
+        ))}
 </Card>
 
     )
