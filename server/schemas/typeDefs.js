@@ -7,7 +7,7 @@ const typeDefs = gql`
         email: String!
         password: String!
         location: String!
-        cars: [Post]
+        posts: [Post]
     }
 
     type Post {
@@ -17,13 +17,14 @@ const typeDefs = gql`
         year: Int!
         color: String
         mileage: Int
+        condition: String
         createdAt: String
         username: String!
-        bids: [Bid]!
+        bids: [Bid]
     }
 
     type Bid {
-        _id: ID
+        _id: ID!
         username: String!
         amount: Int!
         createdAt: String
@@ -31,8 +32,8 @@ const typeDefs = gql`
 
 
     type Auth {
-        token: ID!
-        user: User!
+        token: ID
+        user: User
     }
 
     type Query {

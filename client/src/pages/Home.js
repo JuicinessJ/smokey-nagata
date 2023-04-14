@@ -2,12 +2,13 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import PostList from '../components/PostList';
+import PostForm from '../components/PostForm';
 
 import { QUERY_ALL_POSTS } from '../utils/queries';
 
 const Home = () => {
-  // const { loading, data } = useQuery(QUERY_ALL_POSTS);
-  // const posts = data?.posts || [];
+  const { loading, data } = useQuery(QUERY_ALL_POSTS);
+  const posts = data?.posts || [];
 
   return (
     <main>
