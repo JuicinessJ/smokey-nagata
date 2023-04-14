@@ -1,11 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+
 
 import CarPic1 from '../../assets/images/lincoln-continental.jpg'
 import CarPic2 from '../../assets/images/Range-Rover-Classic.jpg'
@@ -20,39 +15,30 @@ const PostList = (
       return <h3>No Content Yet</h3>;
     }
 
-    return (
-      <Card className='Card' sx={{ maxWidth: 345 }}>
-      <CardMedia
-      sx={{ height: 140 }}
-      image={CarPic1}
-      title="green iguana"
-      />
-      <CardContent className='minipostcontainer'>
-          <div className='minipostpicandtitle'>
-              {/* <img className='minipostcarpic' src={CarPic1} alt='car for sale'></img> */}
-              <Typography gutterBottom variant="h5" component="div">
-                  Lincoln Continental
-              </Typography>
-          </div>
-          <div className='minipostlower'>
-              <div className='minipostinfo'>
-              <Typography variant="body2" color="text.secondary">
-                  For sale by: 
-                  <p>Im A Dolphin</p>
-              </Typography>
-              </div>
-              <CardActions>
-              <Link
-                to={`/post/`}
-              >
-              <Button size='small' variant="contained">Bid On This Vehicle</Button>
-            </Link>
-            </CardActions>
-          </div>
-</CardContent>
-</Card>
-
-    )
-  };
+      return (
+        <div>
+          {posts && posts.map((post) => (
+        <div className='minipostcontainer'>
+            <div className='minipostpicandtitle'>
+                <img className='minipostcarpic' src={CarPic1} alt='car for sale'></img>
+                <h1 className='miniposttitle'>{post.make} {post.model}</h1>
+            </div>
+            <div className='minipostlower'>
+                <div className='minipostinfo'>
+                    <h2 className='minipostinfotitle'>For Sale By:</h2>
+                    <p className='posterusername'>{post.username}</p>
+                </div>
+                <Link
+                  className="button"
+                  to={`/post/${post._id}`}
+                >
+                  Bid On This Vehicle
+              </Link>
+            </div>
+        </div>
+          ))}
+        </div>
+      )
+    };
 
 export default PostList;
