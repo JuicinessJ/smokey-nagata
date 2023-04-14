@@ -8,13 +8,13 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('cars');
+      return User.find().populate('posts');
     },
     me: async (package, args, context) => {
       if (context.user) {
         return User.findOne({
           _id: context.user._id,
-        }).populate('cars');
+        }).populate('posts');
       }
       throw new AuthenticationError("You need to be logged in!");
     },

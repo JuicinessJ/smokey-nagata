@@ -1,47 +1,72 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
-  query me {
-    me {
+query Me {
+  me {
+    _id
+    email
+    location
+    username
+    posts {
       _id
-      cars {
-        _id
-      }
-      email
-      location
-      password
+      year
       username
+      model
+      mileage
+      make
+      condition
+      createdAt
+      color
+      bids {
+        _id
+        amount
+        username
+      }
     }
   }
+}
 `;
 
 export const QUERY_ALL_POSTS = gql`
-  query posts($username: String) {
-  posts(username: $username) {
+  query getAllPosts {
+  posts {
     _id
+    bids {
+      _id
+      amount
+      createdAt
+      username
+    }
+    color
+    condition
+    createdAt
+    make
+    mileage
+    model
     username
+    year
   }
 }
 `;
 
 export const QUERY_SINGLE_POST = gql`
-  query post($postId: ID!) {
-    post(postId: $postId) {
+  query getSinglePost($postId: ID!) {
+  post(postId: $postId) {
+    _id
+    bids {
       _id
-      make
-      model
-      year
-      color
-      condition
-      mileage
+      amount
       createdAt
       username
-      bids {
-        _id
-        username
-        amount
-        createdAt
-      }
     }
+    color
+    condition
+    createdAt
+    make
+    mileage
+    model
+    username
+    year
   }
+}
 `;
