@@ -1,4 +1,12 @@
 import React from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import Card from '@mui/material/Card';
 
 const BidList = ({ bids = [] }) => {
   // copy the bids to another object so we can sort it
@@ -14,6 +22,7 @@ const BidList = ({ bids = [] }) => {
   
   return (
     <>
+      <Card className='Card' sx={{ minWidth: 345 }}>
       <h3
         className="p-5 display-inline-block"
         style={{ borderBottom: '1px dotted #1a1a1a' }}
@@ -22,16 +31,20 @@ const BidList = ({ bids = [] }) => {
       </h3>
       <div className="flex-row my-4">
         <p>The Top 5 Highest Bids Are...</p>
-        {sortBids.map((bid) => (
-            <div key={bid._id} className="col-12 mb-3 pb-3">
-              <div className="p-3 bg-dark text-light bidsContainer">
-                <h5 className="card-body">
-                   {bid.username} bid  ${bid.amount} on {bid.createdAt}
-                </h5>
-              </div>
-            </div>
-          ))}
-      </div>
+        {sortBids.map((bid) => (  
+      <TableContainer component={Paper}>
+      <Table sx={{ maxWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>{bid.username}</TableCell>
+            <TableCell align="right">$ {bid.amount}</TableCell>
+          </TableRow>
+        </TableHead>
+      </Table>
+    </TableContainer>
+))}
+</div>
+</Card>
     </>
   );
 };

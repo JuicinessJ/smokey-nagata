@@ -78,6 +78,7 @@ code {
 }
 
 .cartitle {
+  text-align: center;
   margin: 3%;
   margin-top: 0%;
 }
@@ -99,6 +100,7 @@ code {
 .singlepost {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .singlevehicleview {
@@ -120,26 +122,13 @@ code {
   margin-left: 50%;
 }
 
+#bidform {
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+}
+
 .bidformitems {
-  list-style: none;
-  margin: 5%;
-  width: 80%;
-  margin-left: -8%;
-}
-
-.bidformname {
-  width: 100%;
-  margin: 1%;
-}
-
-.bidformbid {
-  width: 100%;
-  margin: 1%;
-}
-
-.bidformmsg {
-  height: 5em;
-  width: 100%;
   margin: 1%;
 }
 

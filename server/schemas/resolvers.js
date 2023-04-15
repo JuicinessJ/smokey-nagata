@@ -10,6 +10,8 @@ const resolvers = {
     users: async () => {
       return User.find().populate("posts");
     },
+
+//CAN WE FIND A USER BY THEIR USERNAME?? -- TO IMPORT USER.LOCATION INTO A SINGLE-POST PAGE
     me: async (package, args, context) => {
       if (context.user) {
         return User.findOne({
