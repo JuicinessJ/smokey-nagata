@@ -79,7 +79,7 @@ const SinglePost = () => {
 
 
                 <div className='poster'>
-                    <Card className='Card' sx={{ minWidth: 275 }}>
+                    <Card className='Card' sx={{ maxWidth: 275 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                             This vehicle was posted by:
@@ -98,6 +98,8 @@ const SinglePost = () => {
 
                     <div className='bidformcontainer'>
                         <BidForm postId={postId}/>
+                    </div>
+                    <div className='bidlistcontainer'>
                         <BidList bids={post.bids}/>
                     </div>
                 </div>
