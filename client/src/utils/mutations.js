@@ -81,3 +81,27 @@ export const REMOVE_BID = gql`
     }
   }
 `;
+
+export const UPDATE_POST = gql`
+  mutation updatePost(
+    $postId: ID!
+    $make: String!
+    $model: String!
+    $year: Int!
+    $color: String
+    $condition: String
+    $mileage: Int
+  ) {
+    updatePost(
+      postId: $postId
+      make: $make
+      model: $model
+      year: $year
+      color: $color
+      condition: $condition
+      mileage: $mileage
+    ) {
+      _id
+    }
+  }
+`;
