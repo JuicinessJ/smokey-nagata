@@ -40,12 +40,12 @@ const MyVehiclesList = (
                 <div className='minipostinfo'>
                 <Typography variant="body2" color="text.secondary">
                     Created On: 
-                    <p>Post.CreatedAt</p>
+                    <p>{post.createdAt}</p>
                 </Typography>
                 </div>
                 <CardActions>
                 <Link
-                  to={`/post/`}
+                  to={`/post/${post._id}`}
                 >
                 <Button size='small' variant="contained">View Bids On This Vehicle</Button>
               </Link>
