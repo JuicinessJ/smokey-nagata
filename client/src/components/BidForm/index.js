@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 
 import { ADD_BID } from '../../utils/mutations';
+import Card from '@mui/material/Card';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
 
 const BidForm = ( { postId } ) => {
@@ -31,8 +34,8 @@ const BidForm = ( { postId } ) => {
 
 
   return (
-    <div className='bidform'>
-        <h1 className='bidformtitle'>Bid on this vehicle</h1>
+    <Card className='Card' id='bidform' sx={{ minWidth: 345 }}>
+        <h1 className='bidformitems'>Bid on this vehicle</h1>
         {Auth.loggedIn() ? (
             <>
             <form
@@ -42,17 +45,18 @@ const BidForm = ( { postId } ) => {
                 <div>
                     {/* <input className='bidformname' type='text' placeholder='Your Name'></input> */}
                     <label>
-                        Your Bid:
-                        <input 
-                        className='bidformbid'
+                        <TextField 
+                        className='bidformitems'
                         id='bidAmount'
+                        variant='outlined'
                         // defaultValue={0}
                         value={amount}
                         type='text'
+                        placeholder='$ 0.00'
                         // placeholder='Your Bid' 
                         name='amount'
                         onChange={e => setAmount(~~e.target.value)}
-                        ></input>
+                        ></TextField>
                     </label>
                 
                     {/* <input className='bidformmsg' type='text' placeholder='Add a message (optional)'></input> */}
@@ -61,7 +65,7 @@ const BidForm = ( { postId } ) => {
 
                 </div>
                 
-                <button className='submitbtn' id='bidformsubmitbtn' type='submit'>Add Bid</button>
+                <Button className='submitbtn' variant='contained' id='bidformitems' type='submit'>Add Bid</Button>
                 
                 {/* {error && (
                     <div className="col-12 my-3 bg-danger text-white p-3">
@@ -76,7 +80,7 @@ const BidForm = ( { postId } ) => {
             </p>
         )
         }
-        </div>
+        </Card>
   )
 }
 

@@ -4,7 +4,7 @@ import BidList from '../components/BidList';
 import CarPic1 from '../assets/images/lincoln-continental.jpg'
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { QUERY_SINGLE_POST } from '../utils/queries'
+import { QUERY_SINGLE_POST, QUERY_ME } from '../utils/queries'
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -27,12 +27,13 @@ const SinglePost = () => {
     // Use `useParams()` to retrieve value of the route parameter `:postId`
     const { postId } = useParams();
   
-    const { loading, data } = useQuery(QUERY_SINGLE_POST, {
+    const { loading, data } = useQuery( QUERY_ME, QUERY_SINGLE_POST,  {
       // pass URL parameter
       variables: { postId: postId },
     });
   
     const post = data?.post || {};
+    const user = data?.me
 
     
     if (loading) {
@@ -40,67 +41,70 @@ const SinglePost = () => {
     }
 
     return (
-        <div className='singlepost'>
-        <h1 className='cartitle'>{post.make} {post.model}</h1> <p className='cartitle'>{post.location}</p>
-        <Card className='Card' sx={{ minWidth: 400 }}>
-        <CardMedia
-        sx={{ height: 300 }}
-        image={CarPic1}
-        title="green iguana"
-        />
         <div>
-                        <div className='carspecs'>
-                            <List>
-                                <ListItem>
-                                    <ListItemText primary="Model: " />
-                                        <p className='specsinfo' id='specsinfomodel'>{post.make} {post.model}</p>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemText primary="Year: " />
-                                        <p className='specsinfo' id='specsinfoyear'>{post.year}</p>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemText primary="Color: " />
-                                        <p className='specsinfo' id='specsinfocolor'>{post.color}</p>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemText primary="Mileage: " />
-                                        <p className='specsinfo' id='specsinfomileage'>{post.mileage}</p>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemText primary="Condition: " />
-                                        <p className='specsinfo' id='specsinfocondition'>{post.condition}</p>
-                                </ListItem>
-                            </List>
-                        </div>
+            <h1 className='cartitle'>{post.make} {post.model}</h1> <p className='cartitle'>{user.location}</p>
+            <div className='singlepost'>
+                <Card className='Card' sx={{ minWidth: 400 }}>
+                    <CardMedia
+                    sx={{ height: 300 }}
+                    image={CarPic1}
+                    title="green iguana"
+                    />
+                <div>
+                    <div className='carspecs'>
+                        <List>
+                            <ListItem>
+                                <ListItemText primary="Model: " />
+                                    <p className='specsinfo' id='specsinfomodel'>{post.make} {post.model}</p>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText primary="Year: " />
+                                    <p className='specsinfo' id='specsinfoyear'>{post.year}</p>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText primary="Color: " />
+                                    <p className='specsinfo' id='specsinfocolor'>{post.color}</p>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText primary="Mileage: " />
+                                    <p className='specsinfo' id='specsinfomileage'>{post.mileage}</p>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText primary="Condition: " />
+                                    <p className='specsinfo' id='specsinfocondition'>{post.condition}</p>
+                            </ListItem>
+                        </List>
                     </div>
-                    </Card>
-
-
-                    <div className='poster'>
-
-                        <Card className='Card' sx={{ minWidth: 275 }}>
-                <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                    This vehicle was posted by:
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                    {post.username}
-                    </Typography>
-                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    user.location
-                    </Typography>
-                </CardContent>
-                <CardActions>
-                    <Button size="small">View User</Button>
-                </CardActions>
+                </div>
                 </Card>
 
-                <div className='bidformcontainer'>
+
+                <div className='poster'>
+                    <Card className='Card' sx={{ maxWidth: 275 }}>
+                        <CardContent>
+                            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                            This vehicle was posted by:
+                            </Typography>
+                            <Typography variant="h5" component="div">
+                            {post.username}
+                            </Typography>
+                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                            {user.location}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">View User</Button>
+                        </CardActions>
+                    </Card>
+
+                    <div className='bidformcontainer'>
                         <BidForm postId={postId}/>
+                    </div>
+                    <div className='bidlistcontainer'>
                         <BidList bids={post.bids}/>
                     </div>
-                    </div>
+                </div>
+            </div>
         </div>
       )
     }

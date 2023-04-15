@@ -1,5 +1,4 @@
 .App {
-  background-image: linear-gradient(rgb(228, 227, 227), rgb(123, 123, 123));
   height: 100%;
 }
 
@@ -10,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(rgb(228, 227, 227), rgb(123, 123, 123));
 }
 
 code {
@@ -30,11 +30,16 @@ code {
   flex-wrap: wrap;
   margin-left: 10%;
   margin: 1%;
+  color: rgb(78, 0, 141)
 }
 
-.minipostboard {
-  display: flex;
-  flex-wrap: wrap;
+.navbar {
+  margin: 1%;
+  margin-top: -5%;
+}
+
+.profilelink {
+  margin: 1%;
 }
 
 /* .minipostcontainer {
@@ -47,6 +52,16 @@ code {
 
 .Card {
   margin: 1%;
+  margin-bottom: 5%;
+}
+
+.poster {
+  margin: 1%;
+}
+
+.minipostcontainer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .miniposttitle {
@@ -78,6 +93,7 @@ code {
 }
 
 .cartitle {
+  text-align: center;
   margin: 3%;
   margin-top: 0%;
 }
@@ -99,6 +115,7 @@ code {
 .singlepost {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .singlevehicleview {
@@ -120,26 +137,13 @@ code {
   margin-left: 50%;
 }
 
+#bidform {
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+}
+
 .bidformitems {
-  list-style: none;
-  margin: 5%;
-  width: 80%;
-  margin-left: -8%;
-}
-
-.bidformname {
-  width: 100%;
-  margin: 1%;
-}
-
-.bidformbid {
-  width: 100%;
-  margin: 1%;
-}
-
-.bidformmsg {
-  height: 5em;
-  width: 100%;
   margin: 1%;
 }
 
@@ -157,7 +161,7 @@ code {
 }
 
 .profilecontainer {
-  display: inline-block;
+  display: block;
 }
 
 .carCards {
@@ -171,12 +175,17 @@ code {
 
 .carformcontainer {
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
 .postformitems {
   margin: 1%;
+}
+
+#postformcard {
+  text-align: center;
+  padding: 1%;
 }
 
 .submitbtn {
@@ -190,6 +199,11 @@ code {
 .bidformcontainer {
   max-width: 25%;
   margin-right: 25%;
+  margin: 1%;
+}
+
+.bidlistcontainer {
+  margin: 1%;
 }
 
 .button {
@@ -361,10 +375,6 @@ code {
 
   .postertitle {
     margin-left: 5%;
-  }
-
-  .bidformcontainer {
-    margin-left: 0%;
   }
 
   .bidform {
