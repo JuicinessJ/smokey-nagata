@@ -8,13 +8,13 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('posts');
+      return User.find().populate("posts");
     },
     me: async (package, args, context) => {
       if (context.user) {
         return User.findOne({
           _id: context.user._id,
-        }).populate('posts');
+        }).populate("posts");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -42,9 +42,9 @@ const resolvers = {
 
       const correctPw = await user.isCorrectPassword(password);
 
-       if (!correctPw) {
-         throw new AuthenticationError("Incorrect credentials");
-       }
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect credentials");
+      }
 
       const token = signToken(user);
 
@@ -77,7 +77,7 @@ const resolvers = {
     },
     addBid: async (parent, { postId, amount }, context) => {
       if (context.user) {
-        return Post.findOneAndUpdate(
+        return await Post.findOneAndUpdate(
           { _id: postId },
           {
             $addToSet: {
@@ -90,7 +90,7 @@ const resolvers = {
           }
         );
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
     removePost: async (parent, { postId }, context) => {
       if (context.user) {
@@ -106,7 +106,7 @@ const resolvers = {
 
         return post;
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
     removeBid: async (parent, { postId, bidId }, context) => {
       if (context.user) {
@@ -120,35 +120,32 @@ const resolvers = {
               },
             },
           },
-          { new: true }
+          { new: true,
+            runValidators: true}
         );
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
-    // updateUser: async (parent, { userId, username, email, location }, context) => {
-    //   if (context.user) {
-
-    //     const post = await Post.findOneAndUpdate(
-    //       { username: context.user.username},
-    //       {
-    //         username
-    //       });
-
-    //     const user = await User.findOneAndUpdate(
-    //       {_id: userId},
-    //       {
-    //         username,
-    //         email,
-    //         location
-    //       },
-    //       {
-    //         new: true,
-    //         runValidators: true,
-    //       });
-
-    //     return user;
-    //   }
-    // }
+    updatePost: async (
+      parent,
+      { postId, make, model, year, color, condition, mileage },
+      context
+    ) => {
+      if (context.user) {
+        return await Post.findByIdAndUpdate(
+          postId,
+          { make: make,
+            model: model,
+            year: year,
+            color: color,
+            condition: condition,
+            mileage: mileage },
+          { new: true,
+          runValidators: true}
+        );
+      };
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 
