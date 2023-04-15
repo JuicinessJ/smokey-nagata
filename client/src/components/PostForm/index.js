@@ -5,6 +5,8 @@ import { useMutation } from '@apollo/client';
 import { ADD_POST } from '../../utils/mutations';
 // import { QUERY_CONTENT, QUERY_ME } from '../../utils/queries';
 
+import Button from '@mui/material/Button';
+
 import Auth from '../../utils/auth';
 
 
@@ -83,34 +85,34 @@ const PostForm = (/*{_id or postId}*/) => {
   }
 
   return (
-    <div>
+    <div className='carformcontainer'>
       <h3>Add Your Cars:</h3>
       {Auth.loggedIn() ? (
         <form id='carForm' onSubmit={handleFormSubmit}>
 
-          <div>
-            <label>The Make:
-              <input type='text' name='make' id='carMake' value={make} onChange={handleChange}></input>
+          <div className='carForm'>
+            <label>
+              <input type='text' name='make' className='postformitems' placeholder='Make' id='carMake' value={make} onChange={handleChange}></input>
             </label>
 
-            <label>The Model:
-              <input type='text' name='model' id='carModel' value={model} onChange={handleChange}></input>
+            <label>
+              <input type='text' name='model' className='postformitems' placeholder='Model' id='carModel' value={model} onChange={handleChange}></input>
             </label>
 
-            <label>The Year:
-              <input type='number' name='year' id='carYear' value={year} onChange={handleChange}></input>
+            <label>
+              <input type='number' name='year' className='postformitems' placeholder='Year' id='carYear' value={year} onChange={handleChange}></input>
             </label>
 
-            <label>The Color:
-              <input type='text' name='color' id='carColor' value={color} onChange={handleChange}></input>
+            <label>
+              <input type='text' name='color' className='postformitems' placeholder='Color' id='carColor' value={color} onChange={handleChange}></input>
             </label>
 
-            <label>The Mileage:
-              <input type='number' name='mileage' id='carMileage' value={mileage} onChange={handleChange}></input>
+            <label>
+              <input type='number' name='mileage' className='postformitems' placeholder='Mileage' id='carMileage' value={mileage} onChange={handleChange}></input>
             </label>
           </div>
 
-          <button type='submit'>Submit</button>
+          <Button variant='contained' size='small' type='submit'>Submit</Button>
         </form>
       ) : (
         <p>
