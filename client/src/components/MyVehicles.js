@@ -20,7 +20,7 @@ const MyVehiclesList = (
 ) => {
 
       return (
-        <div>
+        <div className='carCards'>
         {profile &&
         profile.posts.map((post) => (
         <Card className='Card' sx={{ maxWidth: 345 }}>

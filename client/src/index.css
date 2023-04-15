@@ -157,6 +157,10 @@ code {
 }
 
 .profilecontainer {
+  display: inline-block;
+}
+
+.carCards {
   display: flex;
 }
 

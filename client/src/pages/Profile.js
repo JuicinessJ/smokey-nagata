@@ -46,9 +46,11 @@ const Profile = () => {
       {/* Need to add something */}
       <h1 className='profiletitle'>My Profile</h1>
       <div className='profilecontainer'>
-        <MyVehicles 
-        profile={profile}
-        />
+        <div className='carCardContainer'>
+          <MyVehicles 
+          profile={profile}
+          />
+        </div>
         <PostForm/>
       </div>
     </div>
