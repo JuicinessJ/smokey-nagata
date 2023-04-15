@@ -1,5 +1,4 @@
 .App {
-  background-image: linear-gradient(rgb(228, 227, 227), rgb(123, 123, 123));
   height: 100%;
 }
 
@@ -10,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(rgb(228, 227, 227), rgb(123, 123, 123));
 }
 
 code {
