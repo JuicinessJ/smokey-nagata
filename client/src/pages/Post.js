@@ -4,7 +4,7 @@ import BidList from '../components/BidList';
 import CarPic1 from '../assets/images/lincoln-continental.jpg'
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { QUERY_SINGLE_POST } from '../utils/queries'
+import { QUERY_SINGLE_POST, QUERY_ME } from '../utils/queries'
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -27,12 +27,13 @@ const SinglePost = () => {
     // Use `useParams()` to retrieve value of the route parameter `:postId`
     const { postId } = useParams();
   
-    const { loading, data } = useQuery(QUERY_SINGLE_POST, {
+    const { loading, data } = useQuery( QUERY_ME, QUERY_SINGLE_POST,  {
       // pass URL parameter
       variables: { postId: postId },
     });
   
     const post = data?.post || {};
+    const user = data?.me
 
     
     if (loading) {
@@ -41,7 +42,8 @@ const SinglePost = () => {
 
     return (
         <div className='singlepost'>
-        <h1 className='cartitle'>{post.make} {post.model}</h1> <p className='cartitle'>{post.location}</p>
+        <h1 className='cartitle'>{post.make} {post.model}</h1> 
+        <p className='cartitle'>{user.location}</p>
         <Card className='Card' sx={{ minWidth: 400 }}>
         <CardMedia
         sx={{ height: 300 }}
@@ -88,7 +90,7 @@ const SinglePost = () => {
                     {post.username}
                     </Typography>
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    user.location
+                    {user.location}
                     </Typography>
                 </CardContent>
                 <CardActions>
