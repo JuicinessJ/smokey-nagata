@@ -11,9 +11,18 @@ import Typography from '@mui/material/Typography';
 import CarPic1 from '../assets/images/lincoln-continental.jpg'
 import CarPic2 from '../assets/images/Range-Rover-Classic.jpg'
 
-const MyVehiclesList = () => {
+const MyVehiclesList = (
+  { profile,
+    posts
+    // showTitle = true, 
+    /*showUsername = true*/
+  }
+) => {
 
       return (
+        <div>
+        {profile &&
+        profile.posts.map((post) => (
         <Card className='Card' sx={{ maxWidth: 345 }}>
         <CardMedia
         sx={{ height: 140 }}
@@ -24,7 +33,7 @@ const MyVehiclesList = () => {
             <div className='minipostpicandtitle'>
                 {/* <img className='minipostcarpic' src={CarPic1} alt='car for sale'></img> */}
                 <Typography gutterBottom variant="h5" component="div">
-                    Lincoln Continental
+                    {post.make} {post.model}
                 </Typography>
             </div>
             <div className='minipostlower'>
@@ -44,6 +53,8 @@ const MyVehiclesList = () => {
             </div>
 </CardContent>
 </Card>
+        ))}
+</div>
 
       )
     };

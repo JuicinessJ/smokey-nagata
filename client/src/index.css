@@ -156,6 +156,25 @@ code {
   color: rgb(78, 0, 141);
 }
 
+.profilecontainer {
+  display: flex;
+}
+
+.carForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.carformcontainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.postformitems {
+  margin: 1%;
+}
+
 .submitbtn {
   background-color: silver;
   border: 2px solid rgb(0, 0, 0);
