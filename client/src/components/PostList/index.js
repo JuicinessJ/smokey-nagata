@@ -27,7 +27,7 @@ const PostList = (
     }
 
     return (
-<div>
+<div className='minipostcontainer'>
       {posts &&
         posts.map((post) => (
       <Card className='Card' sx={{ maxWidth: 345 }}>
@@ -36,7 +36,7 @@ const PostList = (
       image={CarPic1}
       title="green iguana"
       />
-      <CardContent className='minipostcontainer'>
+      <CardContent>
           <div className='minipostpicandtitle'>
               {/* <img className='minipostcarpic' src={CarPic1} alt='car for sale'></img> */}
               <Typography gutterBottom variant="h5" component="div">
