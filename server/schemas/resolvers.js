@@ -81,7 +81,7 @@ const resolvers = {
           { _id: postId },
           {
             $addToSet: {
-              bids: { amount, username: context.user.username },
+              bids: { username: context.user.username, amount },
             },
           },
           {

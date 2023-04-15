@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import PostList from '../components/PostList';
+import PostForm from '../components/PostForm';
 
 import { QUERY_ALL_POSTS } from '../utils/queries';
 
@@ -11,17 +12,11 @@ const Home = () => {
 
   return (
     <main>
-      <div className="flex-row justify-center">
-        <div className="col-12 col-md-8 mb-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
+      <div className="minipostboard">
             <PostList
               posts={posts}
               title="Vehicles for sale"
             />
-          )}
-        </div>
       </div>
     </main>
   );
