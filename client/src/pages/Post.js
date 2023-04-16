@@ -33,7 +33,7 @@ const SinglePost = () => {
     });
   
     const post = data?.post || {};
-    const user = dataM?.me
+    const user = dataM?.me || {};
 
     
     if (loading) {
