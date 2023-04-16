@@ -41,7 +41,7 @@ const UpdatePostForm = ({postId}) => {
       setColor('');
       setMileage('');
 
-      // window.location.reload();
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
