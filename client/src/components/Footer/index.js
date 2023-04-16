@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className='footer'>
-      <p className='footercredit'>Smokey Nagata is brought to you by ...</p>
+      <p className='footercredit'>The Car Shop is brought to you by ...</p>
       <ul>
         <li>
           <a className='githublink' href='https://github.com/Abasheryassin' download>Yassin Abasher</a>
