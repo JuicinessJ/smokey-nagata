@@ -72,10 +72,11 @@ const MyVehiclesList = (
                 <Button size='small' variant="contained">View Bids On This Vehicle</Button>
               </Link>
                 
-                <Button onClick={handlePostUpdate}>Update Post</Button>
               </CardActions>
             </div>
             <div className='updatePostBtn' >
+            <Button onClick={handlePostUpdate}>Update Post</Button>
+
             {isOpen && <div><UpdatePostForm postId={post._id}/></div>}
             </div>
             <Button size='small' variant='contained' onClick={event => handleDeleteButton(event, post._id)}>Delete</Button>

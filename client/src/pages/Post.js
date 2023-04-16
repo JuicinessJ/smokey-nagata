@@ -37,7 +37,6 @@ const SinglePost = () => {
     // grab the users profile data to use location
     const user = dataM?.me || {};
 
-    console.log(post.image);
     
     if (loading) {
       return <div>Loading...</div>;
