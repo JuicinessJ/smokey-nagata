@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import UpdatePostForm from './UpdatePostForm';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -7,7 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useMutation } from '@apollo/client';
-import { REMOVE_POST, UPDATE_POST } from '../utils/mutations';
+import { REMOVE_POST} from '../utils/mutations';
 
 
 import CarPic1 from '../assets/images/lincoln-continental.jpg'
@@ -17,7 +18,10 @@ import CarPic2 from '../assets/images/Range-Rover-Classic.jpg'
 const MyVehiclesList = (
   { profile }
   ) => {
-
+  const [isOpen, setOpen] = useState(false);
+  const handlePostUpdate = () => {
+    setOpen(!isOpen);
+  };
   const [removePost, { error }] = useMutation(REMOVE_POST);
 
   async function handleDeleteButton(event, postId) {
@@ -67,6 +71,10 @@ const MyVehiclesList = (
               </Link>
                 <Button size='small' variant='contained' onClick={event => handleDeleteButton(event, post._id)}>Delete</Button>
               </CardActions>
+                <Button onClick={handlePostUpdate}>Update Post</Button>
+            </div>
+            <div className='updatePostBtn' >
+            <div><UpdatePostForm postId={post._id}/></div>
             </div>
 </CardContent>
 </Card>
