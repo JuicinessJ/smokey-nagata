@@ -31,8 +31,10 @@ const SinglePost = () => {
       // pass URL parameter
       variables: { postId: postId },
     });
-  
+    
+    // grab the post data
     const post = data?.post || {};
+    // grab the users profile data to use location
     const user = dataM?.me || {};
 
     console.log(post.image);

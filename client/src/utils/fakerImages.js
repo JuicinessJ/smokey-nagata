@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 
 
   
-
+// grab a random vehicle from fakerJs
 export function randomVehicle(){
         const vehicles = []
         

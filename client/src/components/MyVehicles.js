@@ -40,9 +40,7 @@ const MyVehiclesList = (
   }
 };
 
-      // const randomVehicle = () => {
-      //   for()
-      // }
+      
       return (
         <div className='carCards'>
         {profile &&

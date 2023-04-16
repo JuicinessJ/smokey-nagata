@@ -26,10 +26,8 @@ const UpdatePostForm = ({postId}) => {
     const formData = new FormData(form);
 
     try {
-      // parseint?
       const { data } = await updatePost({
         variables: {
-          // ...formState
           postId,
           make, model, year, color,
           condition: null,

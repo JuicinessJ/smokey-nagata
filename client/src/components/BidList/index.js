@@ -14,9 +14,11 @@ const BidList = ({ bids = [] }) => {
   if (!bids.length) {
     return <h3>No Bids Yet</h3>;
   } else {
+    // sort the bids by amount, the highest amount is first
     sortBids.sort((a, b) => {
         return b.amount - a.amount;
     });
+    // only get the first 5 bids
     sortBids.splice(5);
   }
   
