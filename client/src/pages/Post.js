@@ -26,14 +26,14 @@ const style = {
 const SinglePost = () => {
     // Use `useParams()` to retrieve value of the route parameter `:postId`
     const { postId } = useParams();
-  
-    const { loading, data } = useQuery( QUERY_ME, QUERY_SINGLE_POST,  {
+    const { loading: loadingM, data: dataM } = useQuery(QUERY_ME);
+    const { loading, data } = useQuery( QUERY_SINGLE_POST,  {
       // pass URL parameter
       variables: { postId: postId },
     });
   
     const post = data?.post || {};
-    const user = data?.me
+    const user = dataM?.me
 
     
     if (loading) {
