@@ -23,7 +23,7 @@ const BidForm = ( { postId } ) => {
         });
 
         setAmount('');
-        window.location.reload();
+        // window.location.reload();
     } catch (err) {
         console.error('Error:          '+err);
     }
