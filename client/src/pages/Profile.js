@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import PostForm from '../components/PostForm';
 import MyBids from '../components/MyBids';
@@ -15,7 +15,11 @@ import Auth from '../utils/auth';
 
 const Profile = () => {
   // const { username: profileId } = useParams();
-
+  const [isOpen, setOpen] = useState(false);
+  const handleClick = () => {
+    setOpen(!isOpen);
+    
+  };
   const { loading, data } = useQuery(
     QUERY_ME,
     
@@ -51,7 +55,10 @@ const Profile = () => {
           profile={profile}
           />
         </div>
-        <PostForm/>
+        <div className='addPostBtn'>
+          <button onClick={handleClick}>Add A Post</button>
+          {isOpen && <div><PostForm/></div>}
+        </div>
       </div>
     </div>
   )

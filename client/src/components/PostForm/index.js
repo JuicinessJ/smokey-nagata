@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 
 import { ADD_POST } from '../../utils/mutations';
 // import { QUERY_CONTENT, QUERY_ME } from '../../utils/queries';
-
+import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 
 import Auth from '../../utils/auth';
@@ -59,6 +59,7 @@ const PostForm = (/*{_id or postId}*/) => {
       //   color: '',
       //   mileage: ''
       // });
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -86,6 +87,7 @@ const PostForm = (/*{_id or postId}*/) => {
 
   return (
     <div className='carformcontainer'>
+      <Card className='Card' id='postformcard' sx={{ width: 300 }}>
       <h3>Add Your Cars:</h3>
       {Auth.loggedIn() ? (
         <form id='carForm' onSubmit={handleFormSubmit}>
@@ -120,6 +122,7 @@ const PostForm = (/*{_id or postId}*/) => {
           <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>
         </p>
       )}
+      </Card>
     </div>
   )
 }

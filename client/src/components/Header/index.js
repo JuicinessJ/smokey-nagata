@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 import Auth from '../../utils/auth';
 
@@ -12,20 +13,20 @@ const Header = () => {
   return (
     <header>
       <div>
-        <div>
+        <div className='sitetitle'>
           <Link className='' to="/">
-            <h1>The Car's Shop</h1>
+            <h1>The Car Shop</h1>
           </Link>
         </div>
-        <div>
+        <div className='navbar'>
           {Auth.loggedIn() ? (
             <>
-              <Link className='' to="/me">
-                {Auth.getProfile().data.username}'s profile
+              <Link className='profilelink' to="/me">
+                <Button variant='contained'>{Auth.getProfile().data.username}'s profile</Button>
               </Link>
-              <button className='' onClick={logout}>
+              <Button className='logoutbtn' onClick={logout}>
                 Logout
-              </button>
+              </Button>
             </>
           ) : (
             <>
