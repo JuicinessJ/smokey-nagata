@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-// import etc
 
 import { QUERY_ME } from '../utils/queries';
 
@@ -44,7 +43,6 @@ const Profile = () => {
   // If logged in
   return (
     <div>
-      {/* Need to add something */}
       <h1 className='profiletitle'>My Profile</h1>
       <div className='profilecontainer'>
         <div className='carCardContainer'>
