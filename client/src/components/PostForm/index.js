@@ -59,6 +59,7 @@ const PostForm = (/*{_id or postId}*/) => {
       //   color: '',
       //   mileage: ''
       // });
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
