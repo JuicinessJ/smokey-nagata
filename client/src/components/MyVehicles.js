@@ -11,14 +11,21 @@ import Typography from '@mui/material/Typography';
 import CarPic1 from '../assets/images/lincoln-continental.jpg'
 import CarPic2 from '../assets/images/Range-Rover-Classic.jpg'
 
+import { faker } from '@faker-js/faker';
+
 const MyVehiclesList = (
   { profile,
     posts
     // showTitle = true, 
     /*showUsername = true*/
   }
+
+  
 ) => {
 
+      // const randomVehicle = () => {
+      //   for()
+      // }
       return (
         <div className='carCards'>
         {profile &&
@@ -26,7 +33,7 @@ const MyVehiclesList = (
         <Card className='Card' sx={{ maxWidth: 345 }}>
         <CardMedia
         sx={{ height: 140 }}
-        image={CarPic1}
+        image={faker.image.imageUrl(1200, 1200, 'automobiles',true)}
         title="green iguana"
         />
         <CardContent className='minipostcontainer'>
