@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "apollo-server-express": "^3.12.0",
-    "dayjs": "^1.11.7"
+    "dayjs": "^1.11.7",
+    "faker": "^6.6.6"
   }
 }
