@@ -70,10 +70,6 @@ const SinglePost = () => {
                                 <ListItemText primary="Mileage: " />
                                     <p className='specsinfo' id='specsinfomileage'>{post.mileage}</p>
                             </ListItem>
-                            <ListItem>
-                                <ListItemText primary="Condition: " />
-                                    <p className='specsinfo' id='specsinfocondition'>{post.condition}</p>
-                            </ListItem>
                         </List>
                     </div>
                 </div>

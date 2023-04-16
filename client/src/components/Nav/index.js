@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from '@mui/material/Button';
+
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
 // function Homepage({ currentPage, handlePageChange }) {
@@ -50,7 +52,7 @@ const Nav = (props) => {
     <section>
       <h1 className='sitetitle'>Smokey Nagata<small className='subtitle'>Bid on cars in your area</small></h1>
       <ul className="navbar">
-        <li className="nav-item">
+        <Button className="nav-item">
           <a
             href="#LogIn"
             onClick={() => setCurrentPage('LogIn')}
@@ -58,7 +60,7 @@ const Nav = (props) => {
           >
             Log In / Sign Up
           </a>
-        </li>
+        </Button>
         <li className="nav-item">
           <a
             href="#MyProfile"
