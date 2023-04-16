@@ -11,10 +11,10 @@ import { useMutation } from '@apollo/client';
 import { REMOVE_POST} from '../utils/mutations';
 
 
-import CarPic1 from '../assets/images/lincoln-continental.jpg'
-import CarPic2 from '../assets/images/Range-Rover-Classic.jpg'
+// import CarPic1 from '../assets/images/lincoln-continental.jpg'
+// import CarPic2 from '../assets/images/Range-Rover-Classic.jpg'
 
-import { faker } from '@faker-js/faker';
+// import { faker } from '@faker-js/faker';
 
 const MyVehiclesList = (
   { profile }
