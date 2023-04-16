@@ -30,12 +30,16 @@ const Header = () => {
             </>
           ) : (
             <>
+            <Button>
               <Link className='' to="/login"> 
                 Login
               </Link>
+              </Button>
+              <Button>
               <Link className='' to="/signup">
                 Signup
               </Link>
+              </Button>
             </>
           )}
         </div>
