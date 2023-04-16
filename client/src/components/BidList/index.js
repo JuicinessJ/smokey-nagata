@@ -24,13 +24,13 @@ const BidList = ({ bids = [] }) => {
     <>
       <Card className='Card' sx={{ maxWidth: 345 }}>
       <h3
-        className="p-5 display-inline-block"
+        className="bidListTitle"
         style={{ borderBottom: '1px dotted #1a1a1a' }}
       >
         Bids
       </h3>
       <div className="flex-row my-4">
-        <p>The Top 5 Highest Bids Are...</p>
+        <p className='bidListTitle'>The Top 5 Highest Bids Are...</p>
         {sortBids.map((bid) => (  
         <TableContainer component={Paper}>
           <Table sx={{ maxWidth: 650 }} aria-label="simple table">
