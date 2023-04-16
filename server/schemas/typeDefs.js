@@ -21,6 +21,7 @@ const typeDefs = gql`
         createdAt: String
         username: String!
         bids: [Bid]
+        image: String
     }
 
     type Bid {
@@ -58,7 +59,8 @@ const typeDefs = gql`
             year: Int!,
             color: String,
             condition: String,
-            mileage: Int,): Post
+            mileage: Int,
+            image: String): Post
         addBid(
             postId: ID!,
             amount: Int!): Post

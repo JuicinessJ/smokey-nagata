@@ -35,11 +35,11 @@ const SinglePost = () => {
     const post = data?.post || {};
     const user = dataM?.me || {};
 
+    console.log(post.image);
     
     if (loading) {
       return <div>Loading...</div>;
     }
-
     return (
         <div>
             <h1 className='cartitle'>{post.make} {post.model}</h1> <p className='cartitle'>{user.location}</p>
@@ -47,7 +47,7 @@ const SinglePost = () => {
                 <Card className='Card' sx={{ minWidth: 400 }}>
                     <CardMedia
                     sx={{ height: 300 }}
-                    image={CarPic1}
+                    image={post.image}
                     title="green iguana"
                     />
                 <div>

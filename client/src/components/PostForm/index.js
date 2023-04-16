@@ -8,7 +8,7 @@ import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 
 import Auth from '../../utils/auth';
-
+import { randomVehicle } from '../../utils/fakerImages'
 
 const PostForm = (/*{_id or postId}*/) => {
   // This might not work so might need todo something else like const everything with a useState for all values such as make, model, year, color, condition, and mileage
@@ -35,7 +35,8 @@ const PostForm = (/*{_id or postId}*/) => {
 
     const form = event.target;
     const formData = new FormData(form);
-
+    const image = randomVehicle().toString();
+    console.log(image);
     try {
       // parseint?
       const { data } = await addPost({
@@ -43,7 +44,8 @@ const PostForm = (/*{_id or postId}*/) => {
           // ...formState
           make, model, year, color, 
           condition: null,
-          mileage
+          mileage,
+          image: image,
         }
         
       });
@@ -59,7 +61,7 @@ const PostForm = (/*{_id or postId}*/) => {
       //   color: '',
       //   mileage: ''
       // });
-      window.location.reload();
+      // window.location.reload();
     } catch (err) {
       console.error(err);
     }

@@ -33,7 +33,7 @@ const MyVehiclesList = (
         <Card className='Card' sx={{ maxWidth: 345 }}>
         <CardMedia
         sx={{ height: 140 }}
-        image={faker.image.imageUrl(1200, 1200, 'automobiles',true)}
+        image={post.image}
         title="green iguana"
         />
         <CardContent className='minipostcontainer'>

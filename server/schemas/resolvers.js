@@ -54,7 +54,7 @@ const resolvers = {
     },
     addPost: async (
       parent,
-      { make, model, year, color, condition, mileage },
+      { make, model, year, color, condition, mileage, image },
       context
     ) => {
       if (context.user) {
@@ -65,6 +65,7 @@ const resolvers = {
           color,
           condition,
           mileage,
+          image,
           username: context.user.username,
         });
 
