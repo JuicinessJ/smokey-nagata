@@ -9,13 +9,13 @@ const resolvers = {
   Query: {
     // return all users
     users: async () => {
-      return User.find().populate("posts");
+      return await User.find().populate("posts");
     },
 
    // query my profile and posts
     me: async (package, args, context) => {
       if (context.user) {
-        return User.findOne({
+        return await User.findOne({
           _id: context.user._id,
         }).populate("posts");
       }
@@ -24,11 +24,11 @@ const resolvers = {
     // query all posts by all users
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Post.find(params).sort({ createdAt: -1 });
+      return await Post.find(params).sort({ createdAt: -1 });
     },
     // query a single post by postId
     post: async (parent, { postId }) => {
-      return Post.findOne({ _id: postId });
+      return await Post.findOne({ _id: postId });
     },
   },
 
@@ -122,7 +122,7 @@ const resolvers = {
     // remove bid by bidId
     removeBid: async (parent, { postId, bidId }, context) => {
       if (context.user) {
-        return Post.findOneAndUpdate(
+        return await Post.findOneAndUpdate(
           { _id: postId },
           {
             $pull: {
