@@ -31,15 +31,16 @@ const SinglePost = () => {
       // pass URL parameter
       variables: { postId: postId },
     });
-  
+    
+    // grab the post data
     const post = data?.post || {};
+    // grab the users profile data to use location
     const user = dataM?.me || {};
 
     
     if (loading) {
       return <div>Loading...</div>;
     }
-
     return (
         <div>
             <h1 className='cartitle'>{post.make} {post.model}</h1> <p className='cartitle'>{user.location}</p>
@@ -47,7 +48,7 @@ const SinglePost = () => {
                 <Card className='Card' sx={{ minWidth: 400 }}>
                     <CardMedia
                     sx={{ height: 300 }}
-                    image={CarPic1}
+                    image={post.image}
                     title="green iguana"
                     />
                 <div>

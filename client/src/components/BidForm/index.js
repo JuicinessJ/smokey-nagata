@@ -19,7 +19,6 @@ const BidForm = ( { postId } ) => {
             variables: {
                 postId,
                 amount,
-
             },
         });
 
@@ -43,23 +42,19 @@ const BidForm = ( { postId } ) => {
                 onSubmit={handleFormSubmit}
             >
                 <div>
-                    {/* <input className='bidformname' type='text' placeholder='Your Name'></input> */}
                     <label>
                         <TextField
                         className='bidformitems'
                         id='bidAmount'
                         variant='outlined'
-                        // defaultValue={0}
                         value={amount}
                         type='text'
                         placeholder='$ 0.00'
-                        // placeholder='Your Bid'
                         name='amount'
                         onChange={e => setAmount(~~e.target.value)}
                         ></TextField>
                     </label>
 
-                    {/* <input className='bidformmsg' type='text' placeholder='Add a message (optional)'></input> */}
 
 
 
@@ -67,11 +62,11 @@ const BidForm = ( { postId } ) => {
 
                 <Button className='submitbtn' variant='contained' id='bidformitems' type='submit'>Add Bid</Button>
 
-                {/* {error && (
+                {error && (
                     <div className="col-12 my-3 bg-danger text-white p-3">
                         {error.message}
                     </div>
-                )} */}
+                )}
             </form>
         </>
         ) : (

@@ -34,6 +34,9 @@ const postSchema = new Schema(
             default: Date.now,
             get: date => dateFormat(date)
         },
+        image:{
+            type: String,
+        },
         username: {
             type: String,
             required: true,

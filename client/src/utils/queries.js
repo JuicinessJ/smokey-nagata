@@ -17,6 +17,7 @@ query Me {
       condition
       createdAt
       color
+      image
       bids {
         _id
         amount
@@ -45,6 +46,7 @@ export const QUERY_ALL_POSTS = gql`
     model
     username
     year
+    image
   }
 }
 `;
@@ -67,6 +69,7 @@ export const QUERY_SINGLE_POST = gql`
     model
     username
     year
+    image
   }
 }
 `;

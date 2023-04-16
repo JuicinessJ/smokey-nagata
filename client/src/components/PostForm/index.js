@@ -3,22 +3,13 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_POST } from '../../utils/mutations';
-// import { QUERY_CONTENT, QUERY_ME } from '../../utils/queries';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 
 import Auth from '../../utils/auth';
+import { randomVehicle } from '../../utils/fakerImages'
 
-
-const PostForm = (/*{_id or postId}*/) => {
-  // This might not work so might need todo something else like const everything with a useState for all values such as make, model, year, color, condition, and mileage
-  // const [formState, setFormState] = useState({
-  //   make: '',
-  //   model: '',
-  //   year: '',
-  //   color: '',
-  //   mileage: ''
-  // })
+const PostForm = () => {
 
 
   const [make, setMake] = useState('');
@@ -34,16 +25,15 @@ const PostForm = (/*{_id or postId}*/) => {
     event.preventDefault();
 
     const form = event.target;
-    const formData = new FormData(form);
-
+    const formData = new FormData();
+    const image = randomVehicle().toString();
     try {
-      // parseint?
       const { data } = await addPost({
         variables: {
-          // ...formState
           make, model, year, color,
           condition: null,
-          mileage
+          mileage,
+          image: image,
         }
 
       });
@@ -52,13 +42,7 @@ const PostForm = (/*{_id or postId}*/) => {
       setYear('');
       setColor('');
       setMileage('');
-      // setFormState({
-      //   make: '',
-      //   model: '',
-      //   year: '',
-      //   color: '',
-      //   mileage: ''
-      // });
+     
       window.location.reload();
     } catch (err) {
       console.error(err);

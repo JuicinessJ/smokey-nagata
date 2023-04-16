@@ -14,6 +14,7 @@ import { REMOVE_POST} from '../utils/mutations';
 import CarPic1 from '../assets/images/lincoln-continental.jpg'
 import CarPic2 from '../assets/images/Range-Rover-Classic.jpg'
 
+import { faker } from '@faker-js/faker';
 
 const MyVehiclesList = (
   { profile }
@@ -37,8 +38,9 @@ const MyVehiclesList = (
   } catch (err) {
       console.error('Error:          '+err);
   }
-  };
+};
 
+      
       return (
         <div className='carCards'>
         {profile &&
@@ -46,7 +48,7 @@ const MyVehiclesList = (
         <Card className='Card' sx={{ maxWidth: 345 }}>
         <CardMedia
         sx={{ height: 140 }}
-        image={CarPic1}
+        image={post.image}
         title="green iguana"
         />
         <CardContent className='minipostcontainer'>
@@ -69,13 +71,16 @@ const MyVehiclesList = (
                 >
                 <Button size='small' variant="contained">View Bids On This Vehicle</Button>
               </Link>
-                <Button size='small' variant='contained' onClick={event => handleDeleteButton(event, post._id)}>Delete</Button>
-                <Button onClick={handlePostUpdate}>Update Post</Button>
+                
               </CardActions>
             </div>
             <div className='updatePostBtn' >
+            <Button onClick={handlePostUpdate}>Update Post</Button>
+
             {isOpen && <div><UpdatePostForm postId={post._id}/></div>}
             </div>
+            <Button size='small' variant='contained' onClick={event => handleDeleteButton(event, post._id)}>Delete</Button>
+
 </CardContent>
 </Card>
         ))}

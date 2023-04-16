@@ -44,6 +44,7 @@ export const ADD_POST = gql`
     $color: String
     $condition: String
     $mileage: Int
+    $image: String
   ) {
     addPost(
       make: $make
@@ -52,6 +53,7 @@ export const ADD_POST = gql`
       color: $color
       condition: $condition
       mileage: $mileage
+      image: $image
     ) {
       _id
     }

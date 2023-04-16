@@ -7,11 +7,12 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    // return all users
     users: async () => {
       return User.find().populate("posts");
     },
 
-//CAN WE FIND A USER BY THEIR USERNAME?? -- TO IMPORT USER.LOCATION INTO A SINGLE-POST PAGE
+   // query my profile and posts
     me: async (package, args, context) => {
       if (context.user) {
         return User.findOne({
@@ -20,21 +21,25 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    // query all posts by all users
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Post.find(params).sort({ createdAt: -1 });
     },
+    // query a single post by postId
     post: async (parent, { postId }) => {
       return Post.findOne({ _id: postId });
     },
   },
 
   Mutation: {
+    // add a user
     addUser: async (parent, { username, email, password, location }) => {
       const user = await User.create({ username, email, password, location });
       const token = signToken(user);
       return { token, user };
     },
+    // login with user
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -52,9 +57,10 @@ const resolvers = {
 
       return { token, user };
     },
+    // add a car post
     addPost: async (
       parent,
-      { make, model, year, color, condition, mileage },
+      { make, model, year, color, condition, mileage, image },
       context
     ) => {
       if (context.user) {
@@ -65,6 +71,7 @@ const resolvers = {
           color,
           condition,
           mileage,
+          image,
           username: context.user.username,
         });
 
@@ -77,6 +84,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    // add a bid to the post by postId
     addBid: async (parent, { postId, amount }, context) => {
       if (context.user) {
         return await Post.findOneAndUpdate(
@@ -94,6 +102,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    // remove post by postId
     removePost: async (parent, { postId }, context) => {
       if (context.user) {
         const post = await Post.findOneAndDelete({
@@ -110,6 +119,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    // remove bid by bidId
     removeBid: async (parent, { postId, bidId }, context) => {
       if (context.user) {
         return Post.findOneAndUpdate(
@@ -128,6 +138,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    // update post by postId
     updatePost: async (
       parent,
       { postId, make, model, year, color, condition, mileage },

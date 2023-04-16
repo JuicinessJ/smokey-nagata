@@ -100,7 +100,7 @@ const SignupForm = () => {
                 </Form.Group>
                 
                 <Form.Group className='mb-3'>
-                    <Form.Label htmlFor='location'></Form.Label>
+                    <Form.Label htmlFor='location'>Location</Form.Label>
                     <Form.Control
                         type='location'
                         placeholder='Your address'

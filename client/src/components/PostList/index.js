@@ -25,7 +25,6 @@ const PostList = (
     if (!posts.length) {
       return <h3>No Content Yet</h3>;
     }
-
     return (
 <div className='minipostcontainer'>
       {posts &&
@@ -33,7 +32,7 @@ const PostList = (
       <Card className='Card' sx={{ maxWidth: 345 }}>
       <CardMedia
       sx={{ height: 140 }}
-      image={CarPic1}
+      image={post.image}
       title="green iguana"
       />
       <CardContent>

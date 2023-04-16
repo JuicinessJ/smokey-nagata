@@ -14,7 +14,7 @@ import { QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const Profile = () => {
-  // const { username: profileId } = useParams();
+  // create a state to open a postForm
   const [isOpen, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!isOpen);
@@ -23,16 +23,10 @@ const Profile = () => {
     postBtn.setAttribute('class', 'hidden');
     
   };
-  const { loading, data } = useQuery(
-    QUERY_ME,
-    
-  );
+  const { loading, data } = useQuery(QUERY_ME);
 
   const profile = data?.me || {};
 
-  // if (Auth.loggedIn() && Auth.getProfile().data.username === profile.username) {
-  //   return <Navigate to="/me"/>;
-  // }
 
   if (loading) {
     return <div>Loading...</div>;
