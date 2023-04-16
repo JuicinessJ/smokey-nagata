@@ -2,25 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_POST } from '../../utils/mutations';
-// import { QUERY_CONTENT, QUERY_ME } from '../../utils/queries';
+import { UPDATE_POST } from '../../utils/mutations';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 
 import Auth from '../../utils/auth';
-import { randomVehicle } from '../../utils/fakerImages'
-
-const PostForm = (/*{_id or postId}*/) => {
-  // This might not work so might need todo something else like const everything with a useState for all values such as make, model, year, color, condition, and mileage
-  // const [formState, setFormState] = useState({
-  //   make: '',
-  //   model: '',
-  //   year: '',
-  //   color: '',
-  //   mileage: ''
-  // })
 
 
+const UpdatePostForm = ({postId}) => {
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
   const [year, setYear] = useState('');
@@ -28,24 +17,23 @@ const PostForm = (/*{_id or postId}*/) => {
   const [mileage, setMileage] = useState('');
 
 
-  const [addPost, {error}] = useMutation(ADD_POST);
+  const [updatePost, {error}] = useMutation(UPDATE_POST);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     const form = event.target;
-    const formData = new FormData();
-    const image = randomVehicle().toString();
-    console.log(image);
+    const formData = new FormData(form);
+
     try {
       // parseint?
-      const { data } = await addPost({
+      const { data } = await updatePost({
         variables: {
           // ...formState
+          postId,
           make, model, year, color,
           condition: null,
-          mileage,
-          image: image,
+          mileage
         }
 
       });
@@ -54,14 +42,8 @@ const PostForm = (/*{_id or postId}*/) => {
       setYear('');
       setColor('');
       setMileage('');
-      // setFormState({
-      //   make: '',
-      //   model: '',
-      //   year: '',
-      //   color: '',
-      //   mileage: ''
-      // });
-      // window.location.reload();
+
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -90,7 +72,7 @@ const PostForm = (/*{_id or postId}*/) => {
   return (
     <div className='carformcontainer'>
       <Card className='Card' id='postformcard' sx={{ width: 300 }}>
-      <h3>Add Your Cars:</h3>
+      <h3>Update Post:</h3>
       {Auth.loggedIn() ? (
         <form id='carForm' onSubmit={handleFormSubmit}>
 
@@ -120,7 +102,7 @@ const PostForm = (/*{_id or postId}*/) => {
         </form>
       ) : (
         <p>
-          You must be logged in to add your cars. Please{' '}
+          You must be logged in to update you post.{' '}
           <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>
         </p>
       )}
@@ -129,4 +111,4 @@ const PostForm = (/*{_id or postId}*/) => {
   )
 }
 
-export default PostForm;
+export default UpdatePostForm;

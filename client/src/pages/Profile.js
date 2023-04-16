@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import PostForm from '../components/PostForm';
 import MyBids from '../components/MyBids';
 import MyVehicles from '../components/MyVehicles';
-
+import Button from '@mui/material/Button';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
@@ -18,6 +18,9 @@ const Profile = () => {
   const [isOpen, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!isOpen);
+
+    const postBtn = document.querySelector('#postBtn');
+    postBtn.setAttribute('class', 'hidden');
     
   };
   const { loading, data } = useQuery(
@@ -56,7 +59,9 @@ const Profile = () => {
           />
         </div>
         <div className='addPostBtn'>
-          <button onClick={handleClick}>Add A Post</button>
+          <div className='postBtn' id='postBtn'>
+          <Button variant='contained' onClick={handleClick}>Add A Post</Button>
+          </div>
           {isOpen && <div><PostForm/></div>}
         </div>
       </div>

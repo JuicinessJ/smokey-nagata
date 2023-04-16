@@ -13,13 +13,13 @@ const BidForm = ( { postId } ) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
         const { data }  = await addBid({
-            variables: { 
-                postId, 
+            variables: {
+                postId,
                 amount,
-                
+
             },
         });
 
@@ -29,7 +29,7 @@ const BidForm = ( { postId } ) => {
         console.error('Error:          '+err);
     }
   }
-  
+
 
 
 
@@ -45,7 +45,7 @@ const BidForm = ( { postId } ) => {
                 <div>
                     {/* <input className='bidformname' type='text' placeholder='Your Name'></input> */}
                     <label>
-                        <TextField 
+                        <TextField
                         className='bidformitems'
                         id='bidAmount'
                         variant='outlined'
@@ -53,20 +53,20 @@ const BidForm = ( { postId } ) => {
                         value={amount}
                         type='text'
                         placeholder='$ 0.00'
-                        // placeholder='Your Bid' 
+                        // placeholder='Your Bid'
                         name='amount'
                         onChange={e => setAmount(~~e.target.value)}
                         ></TextField>
                     </label>
-                
+
                     {/* <input className='bidformmsg' type='text' placeholder='Add a message (optional)'></input> */}
-                
-                    
+
+
 
                 </div>
-                
+
                 <Button className='submitbtn' variant='contained' id='bidformitems' type='submit'>Add Bid</Button>
-                
+
                 {/* {error && (
                     <div className="col-12 my-3 bg-danger text-white p-3">
                         {error.message}
